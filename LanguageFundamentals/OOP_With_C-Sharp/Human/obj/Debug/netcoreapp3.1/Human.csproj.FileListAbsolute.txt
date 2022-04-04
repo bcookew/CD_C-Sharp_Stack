@@ -1,0 +1,13 @@
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\bin\Debug\netcoreapp3.1\Human.exe
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\bin\Debug\netcoreapp3.1\Human.deps.json
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\bin\Debug\netcoreapp3.1\Human.runtimeconfig.json
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\bin\Debug\netcoreapp3.1\Human.runtimeconfig.dev.json
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\bin\Debug\netcoreapp3.1\Human.dll
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\bin\Debug\netcoreapp3.1\Human.pdb
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\obj\Debug\netcoreapp3.1\Human.csprojAssemblyReference.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\obj\Debug\netcoreapp3.1\Human.AssemblyInfoInputs.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\obj\Debug\netcoreapp3.1\Human.AssemblyInfo.cs
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\obj\Debug\netcoreapp3.1\Human.csproj.CoreCompileInputs.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\obj\Debug\netcoreapp3.1\Human.dll
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\obj\Debug\netcoreapp3.1\Human.pdb
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\Human\obj\Debug\netcoreapp3.1\Human.genruntimeconfig.cache
