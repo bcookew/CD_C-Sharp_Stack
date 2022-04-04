@@ -1,0 +1,13 @@
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\bin\Debug\netcoreapp3.1\DeckOfCards.exe
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\bin\Debug\netcoreapp3.1\DeckOfCards.deps.json
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\bin\Debug\netcoreapp3.1\DeckOfCards.runtimeconfig.json
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\bin\Debug\netcoreapp3.1\DeckOfCards.runtimeconfig.dev.json
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\bin\Debug\netcoreapp3.1\DeckOfCards.dll
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\bin\Debug\netcoreapp3.1\DeckOfCards.pdb
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.csprojAssemblyReference.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.AssemblyInfoInputs.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.AssemblyInfo.cs
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.csproj.CoreCompileInputs.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.dll
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.pdb
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\LanguageFundamentals\OOP_With_C-Sharp\DeckOfCards\obj\Debug\netcoreapp3.1\DeckOfCards.genruntimeconfig.cache
