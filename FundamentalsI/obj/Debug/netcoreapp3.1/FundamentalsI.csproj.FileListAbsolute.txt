@@ -1,0 +1,13 @@
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\bin\Debug\netcoreapp3.1\FundamentalsI.exe
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\bin\Debug\netcoreapp3.1\FundamentalsI.deps.json
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\bin\Debug\netcoreapp3.1\FundamentalsI.runtimeconfig.json
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\bin\Debug\netcoreapp3.1\FundamentalsI.runtimeconfig.dev.json
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\bin\Debug\netcoreapp3.1\FundamentalsI.dll
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\bin\Debug\netcoreapp3.1\FundamentalsI.pdb
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\obj\Debug\netcoreapp3.1\FundamentalsI.csprojAssemblyReference.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\obj\Debug\netcoreapp3.1\FundamentalsI.AssemblyInfoInputs.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\obj\Debug\netcoreapp3.1\FundamentalsI.AssemblyInfo.cs
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\obj\Debug\netcoreapp3.1\FundamentalsI.csproj.CoreCompileInputs.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\obj\Debug\netcoreapp3.1\FundamentalsI.dll
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\obj\Debug\netcoreapp3.1\FundamentalsI.pdb
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\FundamentalsI\obj\Debug\netcoreapp3.1\FundamentalsI.genruntimeconfig.cache

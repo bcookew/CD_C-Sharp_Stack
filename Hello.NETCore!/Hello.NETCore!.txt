@@ -1,0 +1,18 @@
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#>dotnet --version
+3.1.302
+
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#>dotnet new console -o Hello.NETCore!   
+The template "Console Application" was created successfully.
+
+Processing post-creation actions...
+Running 'dotnet restore' on Hello.NETCore!\Hello.NETCore!.csproj...
+  Determining projects to restore...
+  Restored C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\Hello.NETCore!.csproj (in 120 ms).
+
+Restore succeeded.
+
+
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#>cd "Hello.NETCore!" 
+
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!>dotnet run
+Hello World!

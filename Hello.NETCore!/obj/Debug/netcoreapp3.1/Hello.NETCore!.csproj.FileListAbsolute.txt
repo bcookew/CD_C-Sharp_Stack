@@ -1,0 +1,13 @@
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\bin\Debug\netcoreapp3.1\Hello.NETCore!.exe
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\bin\Debug\netcoreapp3.1\Hello.NETCore!.deps.json
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\bin\Debug\netcoreapp3.1\Hello.NETCore!.runtimeconfig.json
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\bin\Debug\netcoreapp3.1\Hello.NETCore!.runtimeconfig.dev.json
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\bin\Debug\netcoreapp3.1\Hello.NETCore!.dll
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\bin\Debug\netcoreapp3.1\Hello.NETCore!.pdb
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\obj\Debug\netcoreapp3.1\Hello.NETCore!.csprojAssemblyReference.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\obj\Debug\netcoreapp3.1\Hello.NETCore!.AssemblyInfoInputs.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\obj\Debug\netcoreapp3.1\Hello.NETCore!.AssemblyInfo.cs
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\obj\Debug\netcoreapp3.1\Hello.NETCore!.csproj.CoreCompileInputs.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\obj\Debug\netcoreapp3.1\Hello.NETCore!.dll
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\obj\Debug\netcoreapp3.1\Hello.NETCore!.pdb
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\Hello.NETCore!\obj\Debug\netcoreapp3.1\Hello.NETCore!.genruntimeconfig.cache
