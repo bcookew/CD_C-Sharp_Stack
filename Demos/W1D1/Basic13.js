@@ -10,4 +10,4 @@ function getAverage(arr) {
 }
 
 arr1 = [5,5,5,5,5,5,5,5];
-console.log(getAverage(arr1));
+console.log(`The average is ${getAverage(arr1)}`);
