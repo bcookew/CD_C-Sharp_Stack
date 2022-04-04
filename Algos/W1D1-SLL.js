@@ -17,6 +17,20 @@ class SLL {
     is_empty(){
         return this.head == null; // If the head is null return True else Return False
     }
+    // Send node values to Array for printing
+    to_array(){
+        if(this.is_empty()){
+            console.log("Empty List!");
+        } else{
+            let arr = [];
+            var runner = this.head;
+            while(runner){
+                arr.push(runner.val)
+                runner = runner.next
+            }
+            console.log(arr);
+        }
+    }
     // Add to end of SLL
     add_to_back(val){
         if(this.is_empty()){
