@@ -4,7 +4,7 @@ namespace WizardNinjaSamurai
 {
     class Wizard : Human
     {
-        public Wizard(string name, int str=3, int dex=3) : base(name, str, 25, dex, 50)
+        public Wizard(string name) : base(name, 3, 25, 3, 50)
         {
             
         }

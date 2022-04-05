@@ -15,17 +15,7 @@ namespace WizardNinjaSamurai
             get { return health; }
             set { health = value; }
         }
-         
-        public Human(string name)
-        {
-            Name = name;
-            Strength = 3;
-            Intelligence = 3;
-            Dexterity = 3;
-            health = 100;
-        }
-         
-        public Human(string name, int str=3, int intel=3, int dex=3, int hp=100)
+        public Human(string name, int str, int intel, int dex, int hp)
         {
             Name = name;
             Strength = str;

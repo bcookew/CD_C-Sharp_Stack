@@ -4,10 +4,7 @@ namespace WizardNinjaSamurai
 {
     class Ninja : Human
     {
-        public Ninja(string name, int str=3, int intel=3, int hp=100) : base(name, str, intel, 175, hp)
-        {
-            
-        }
+        public Ninja(string name) : base(name, 3, 3, 175, 100){}
         public override int Attack(Human target)
         {
             Random rand = new Random();

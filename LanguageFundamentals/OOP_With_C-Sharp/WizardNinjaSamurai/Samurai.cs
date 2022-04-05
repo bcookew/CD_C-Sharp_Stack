@@ -4,10 +4,7 @@ namespace WizardNinjaSamurai
 {
     class Samurai : Human
     {
-        public Samurai(string name, int str=3, int intel=3, int dex=3) : base(name, str, intel, dex, 200)
-        {
-            
-        }
+        public Samurai(string name) : base(name, 3, 3, 3, 200){}
         public override int Attack(Human target)
         {
             base.Attack(target);
