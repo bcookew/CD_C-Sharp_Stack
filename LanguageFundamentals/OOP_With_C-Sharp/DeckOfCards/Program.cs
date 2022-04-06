@@ -81,7 +81,7 @@ namespace DeckOfCards
         public void Shuffle()
         {
             Random rand = new Random();
-            for (int i = 0; i < 52; i++)
+            for (int i = 0; i < cards.Count; i++)
             {
                 Card temp = cards[i];
                 int num = rand.Next(0, cards.Count);
