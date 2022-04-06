@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Hello!</title>
+    </head>
+    <body>
+        @{
+            var StringList = new List<string>
+                {
+                    "This",
+                    "is",
+                    "super",
+                    "cool!",
+                };
+        }
+        <div class="grid-container">
+            <div class="grid-x grid-padding-y grid-margin-y align-center">
+                <div class="cell text-center">
+                    <h1>Hello ASP.NET Mvc!</h1>
+                </div>
+            </div>
+        <div class="grid-container">
+            <div class="grid-x grid-padding-y grid-margin-y align-center">
+                <div class="cell text-center">
+                    @foreach (string word in StringList)
+                    {
+                        if(word[0] == 'c'){<h2 style="color:red">@word</h2>}
+                        else{<h2>@word</h2>}
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- Compressed CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+        <!-- Compressed JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+    </body>
+</html>
+
