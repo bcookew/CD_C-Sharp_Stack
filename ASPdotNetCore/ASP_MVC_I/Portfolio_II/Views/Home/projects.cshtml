@@ -1,0 +1,32 @@
+@{
+    Layout = "Main";
+}
+<div class="grid-container">
+    <div class="grid-x grid-margin-y grid-padding-y align-center">
+        <div class="cell shrink">
+            <h3>My Projects!</h3>
+        </div>
+    </div>
+    <div class="grid-x align-center">
+        <div class="cell medium-6">
+            @{
+                for (int i = 0; i < 4; i++)
+                {
+                    <div class="media-object">
+                        <div class="media-object-section">
+                            <div class="thumbnail">
+                                <img class="project_photo" src="~/assets/imgs/ProfilePhoto.jpg">
+                            </div>
+                        </div>
+                        <div class="media-object-section main-section">
+                            <h4>My Project Name!</h4>
+                            <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An
+                                idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It
+                                can grow to define or destroy you.</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
