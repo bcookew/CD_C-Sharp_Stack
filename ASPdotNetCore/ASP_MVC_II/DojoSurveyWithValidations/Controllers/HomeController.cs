@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DojoSurveyWithValidations.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace DojoSurveyWithValidations.Controllers
 {
@@ -17,15 +18,23 @@ namespace DojoSurveyWithValidations.Controllers
         {
             _logger = logger;
         }
-
+        [HttpGet("/")]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost("survey")]
+        public IActionResult Submission(Survey submission)
         {
-            return View();
+            if(ModelState.IsValid)
+            {
+                return View(submission);
+            }
+            else
+            {
+                return View("Index");
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
