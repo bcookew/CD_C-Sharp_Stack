@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DojoSurveyWithModel.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace DojoSurveyWithModel.Controllers
 {
@@ -17,15 +18,17 @@ namespace DojoSurveyWithModel.Controllers
         {
             _logger = logger;
         }
-
+        [HttpGet("/")]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost("survey")]
+        public IActionResult Submission(Survey submission)
         {
-            return View();
+
+            return View(submission);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

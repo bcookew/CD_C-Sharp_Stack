@@ -1,0 +1,30 @@
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home Page"; 
+}
+@using DojoSurveyWithModel.Models
+@model Survey
+
+<div class="grid-container">
+    <div class="grid-x grid-padding-y align-center">
+        <span class="cell h3 text-center">Survey Response</span>
+        <div class="cell medium-2">
+            <span class="lead">Name:</span>
+            <hr>
+            <span class="lead">Campus:</span>
+            <hr>
+            <span class="lead">Favorite Language:</span>
+            <hr>
+            <span class="lead">Comment:</span>
+        </div>
+        <div class="cell medium-2">
+            <span class="lead">@Model.Name</span>
+            <hr>
+            <span class="lead">@Model.Campus</span>
+            <hr>
+            <span class="lead">@Model.FavoriteLanguage</span>
+            <hr>
+            <span class="lead">@Model.Comment</span>
+        </div>
+    </div>
+</div>

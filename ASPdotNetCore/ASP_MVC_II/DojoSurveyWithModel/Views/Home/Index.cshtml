@@ -1,8 +1,38 @@
-﻿@{
+@{
+    Layout = "_Layout";
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<div class="grid-container">
+    <div class="grid-x grid-margin-y grid-padding-y align-center">
+        <div class="cell shrink">
+            <h3>Dojo Survey</h3>
+        </div>
+    </div>
+    <div class="grid-x align-spaced">
+        <form method="post" action="survey" class="cell medium-4">
+            <label>Name
+                <input name="Name" type="text" placeholder="Name">
+            </label>
+            <label>Dojo Location
+                <select name="Campus">
+                    <option value="san jose">San Jose</option>
+                    <option value="bellevue">Bellevue</option>
+                    <option value="online">Online</option>
+                </select>
+            </label>
+            <label>Favorite Language
+                <select name="FavoriteLanguage">
+                    <option value="C#">C#</option>
+                    <option value="C#">C#</option>
+                    <option value="C#">C#</option>
+                    <option value="C#">C#</option>
+                    <option value="Chef">Chef</option>
+                </select>
+            </label>
+            <label>
+                Comment (optional)
+                <textarea name="Comment" rows="4" placeholder="Comment"></textarea>
+            </label>
+            <input type="submit" value="Submit" class="button alert">
+        </form>
+    </div>
