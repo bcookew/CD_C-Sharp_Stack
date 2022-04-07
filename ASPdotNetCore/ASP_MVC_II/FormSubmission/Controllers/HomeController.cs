@@ -23,7 +23,20 @@ namespace FormSubmission.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost("Create")]
+        public IActionResult Create (User user)
+        {
+            if(ModelState.IsValid)
+            {
+                return RedirectToAction("Submission");
+            }
+            else
+            {
+                return View("Index");
+            }
+        }
+        [HttpGet("Submission")]
+        public IActionResult Submission()
         {
             return View();
         }

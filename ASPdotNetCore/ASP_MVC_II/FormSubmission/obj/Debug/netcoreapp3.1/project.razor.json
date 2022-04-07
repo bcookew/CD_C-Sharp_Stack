@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\DojoSurveyWithModel\\DojoSurveyWithModel.csproj",
+  "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\FormSubmission\\FormSubmission.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14399,41 +14399,46 @@
     ],
     "CSharpLanguageVersion": 800
   },
-  "RootNamespace": "DojoSurveyWithModel",
+  "RootNamespace": "FormSubmission",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\DojoSurveyWithModel\\Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\FormSubmission\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\FormSubmission\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\DojoSurveyWithModel\\Views\\Home\\Submission.cshtml",
-      "TargetPath": "Views\\Home\\Submission.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\DojoSurveyWithModel\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\DojoSurveyWithModel\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\DojoSurveyWithModel\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\DojoSurveyWithModel\\Views\\Shared\\Error.cshtml",
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\FormSubmission\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\DojoSurveyWithModel\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\FormSubmission\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\FormSubmission\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\FormSubmission\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\FormSubmission\\Views\\Home\\Submission.cshtml",
+      "TargetPath": "Views\\Home\\Submission.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\FormSubmission\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     }
   ],
