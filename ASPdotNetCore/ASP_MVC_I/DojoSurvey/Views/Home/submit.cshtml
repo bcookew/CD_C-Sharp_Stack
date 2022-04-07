@@ -1,0 +1,25 @@
+@{Layout = "Main";}
+
+<div class="grid-container">
+    <div class="grid-x grid-padding-y align-center">
+        <span class="cell h3 text-center">Survey Response</span>
+        <div class="cell medium-2">
+            <span class="lead">Name:</span>
+            <hr>
+            <span class="lead">Campus:</span>
+            <hr>
+            <span class="lead">Favorite Language:</span>
+            <hr>
+            <span class="lead">Comment:</span>
+        </div>
+        <div class="cell medium-2">
+            <span class="lead">@ViewBag.name</span>
+            <hr>
+            <span class="lead">@ViewBag.campus</span>
+            <hr>
+            <span class="lead">@ViewBag.lang</span>
+            <hr>
+            <span class="lead">@ViewBag.comment</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+@{
+    Layout = "Main";
+}
+<div class="grid-container">
+    <div class="grid-x grid-margin-y grid-padding-y align-center">
+        <div class="cell shrink">
+            <h3>Dojo Survey</h3>
+        </div>
+    </div>
+    <div class="grid-x align-spaced">
+        <form method="post" action="Submit" class="cell medium-4">
+            <label>Name
+                <input name="name" type="text" placeholder="Name">
+            </label>
+            <label>Dojo Location
+                <select name="campus">
+                    <option value="san jose">San Jose</option>
+                    <option value="bellevue">Bellevue</option>
+                    <option value="online">Online</option>
+                </select>
+            </label>
+            <label>Favorite Language
+                <select name="lang">
+                    <option value="C#">C#</option>
+                    <option value="C#">C#</option>
+                    <option value="C#">C#</option>
+                    <option value="C#">C#</option>
+                    <option value="Chef">Chef</option>
+                </select>
+            </label>
+            <label>
+                Comment (optional)
+                <textarea name="comment" rows="4" placeholder="Comment"></textarea>
+            </label>
+            <input type="submit" value="Submit" class="button alert">
+        </form>
+    </div>
