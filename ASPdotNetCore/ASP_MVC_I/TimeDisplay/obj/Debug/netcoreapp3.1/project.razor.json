@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_I\\Portfolio_II\\Portfolio_II.csproj",
+  "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_I\\TimeDisplay\\TimeDisplay.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14399,26 +14399,11 @@
     ],
     "CSharpLanguageVersion": 800
   },
-  "RootNamespace": "Portfolio_II",
+  "RootNamespace": "TimeDisplay",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_I\\Portfolio_II\\Views\\Home\\projects.cshtml",
-      "TargetPath": "Views\\Home\\projects.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_I\\Portfolio_II\\Views\\Shared\\Main.cshtml",
-      "TargetPath": "Views\\Shared\\Main.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_I\\Portfolio_II\\Views\\Home\\index.cshtml",
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_I\\TimeDisplay\\Views\\Home\\index.cshtml",
       "TargetPath": "Views\\Home\\index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_I\\Portfolio_II\\Views\\Home\\contact.cshtml",
-      "TargetPath": "Views\\Home\\contact.cshtml",
       "FileKind": "mvc"
     }
   ],
