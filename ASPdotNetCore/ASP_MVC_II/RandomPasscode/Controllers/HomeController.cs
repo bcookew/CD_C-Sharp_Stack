@@ -21,12 +21,15 @@ namespace RandomPasscode.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            Passcode code = new Passcode();
+            return View(code);
         }
 
-        public IActionResult Privacy()
+        [HttpPost("/newCode")]
+        public IActionResult NewCode(Passcode CodeString)
         {
-            return View();
+            CodeString.NewCode();
+            return View("Index",CodeString);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

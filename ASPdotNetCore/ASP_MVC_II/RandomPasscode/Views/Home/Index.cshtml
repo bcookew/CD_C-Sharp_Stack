@@ -1,8 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model Passcode
 <div class="row">
     <div class="col-4 text-center">
         <h1 class="display-4">Password Generator</h1>
+        <form action="/newCode" method="POST">
+            <h2 class="lead">Passcode <input asp-for="count" value="@Model.count"></span></h2>
+            <input asp-for="code" value="@Model.code">
+            <input type="submit" value="Generate" class="button">
+        </form>
     </div>
 </div>
