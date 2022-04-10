@@ -1,8 +1,22 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Dojodachi";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<partial name="Counter">
+<div class="grid-x align-center grid-padding-y">
+    <div class="cell medium-6 text-center">
+        <img src="~/imgs/Happy-Squirtle.jpg" alt="Happy Squirtle!">
+    </div>
+</div>
+<div class="grid-x align-center grid-padding-y">
+    <div class="cell medium-6 text-center">
+        <span class="h5">@Model.LastMsg</span>
+    </div>
+</div>
+<div class="grid-x align-center grid-padding-y">
+    <div class="cell medium-6 text-center">
+        <a id="feed" class="button">Feed</a>
+        <a id="play" class="button">Play</a>
+        <a id="work" class="button">Work</a>
+        <a id="sleep" class="button">Sleep</a>
+    </div>
 </div>

@@ -14422,6 +14422,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\Dojodachi\\Views\\Home\\Counter.cshtml",
+      "TargetPath": "Views\\Home\\Counter.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_II\\Dojodachi\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
