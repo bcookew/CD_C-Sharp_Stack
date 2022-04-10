@@ -26,12 +26,13 @@ namespace Dojodachi.Controllers
         }
         
         [HttpPost("/sleep")]
-        public IActionResult sleep(DojodachiPet pet)
+        public IActionResult sleep(string data)
         {
             Console.WriteLine("\n\ninside controller\n\n");
+            dynamic pet = JsonSerializer.Deserialize<DojodachiPet>(data);
             Console.WriteLine(pet.Energy);
-            pet.Sleep();
-            Console.WriteLine(pet.Energy);
+            // pet.Sleep();
+            // Console.WriteLine(pet.Energy);
             return View("Index", pet);
         }
         [HttpGet("/feed")]

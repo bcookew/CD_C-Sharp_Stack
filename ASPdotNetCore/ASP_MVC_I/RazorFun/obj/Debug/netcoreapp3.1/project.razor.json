@@ -14402,8 +14402,8 @@
   "RootNamespace": "RazorFun",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_I\\RazorFun\\Views\\Hello\\index.cshtml",
-      "TargetPath": "Views\\Hello\\index.cshtml",
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ASPdotNetCore\\ASP_MVC_I\\RazorFun\\Views\\Fun\\index.cshtml",
+      "TargetPath": "Views\\Fun\\index.cshtml",
       "FileKind": "mvc"
     }
   ],
