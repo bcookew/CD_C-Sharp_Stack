@@ -1,8 +1,23 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="grid-x align-center margin-bottom-3">
+    <div class="cell shrink">
+        <h1>Welcome to CRUDelicious</h1>
+    </div>
+</div>
+<div class="grid-x align-justify">
+    <div class="cell shrink">
+        <h2 class="h4">Check out some recent dishes!</h2>
+        <hr>
+        <ul>
+            @for (int i = 0; i < 5; i++)
+            {
+                <li class="h5">Dish-@i by Chef-@i</li>
+            }
+        </ul>
+    </div>
+    <div class="cell shrink text-right">
+        <a asp-action="NewDish" class="button">Add a Dish!</a>
+    </div>
 </div>

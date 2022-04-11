@@ -24,7 +24,24 @@ namespace CRUDelicious.Controllers
         {
             return View();
         }
-
+        [HttpGet("DishForm")]
+        public IActionResult NewDish()
+        {
+            return View();
+        }
+        [HttpPost("AddNew")]
+        public IActionResult AddNew(Dish dish)
+        {
+            if(ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("NewDish");
+            }
+            
+        }
         public IActionResult Privacy()
         {
             return View();
