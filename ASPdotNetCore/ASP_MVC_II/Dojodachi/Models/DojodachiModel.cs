@@ -18,14 +18,6 @@ namespace Dojodachi.Models
             LastMsg = "Welcome! Come meet your new Dojodachi!";
         }
 
-        public DojodachiPet(int hap, int full, int ener, int meals)
-        {
-            Happiness = hap;
-            Fullness = full;
-            Energy = ener;
-            Meals = meals;
-        }
-
         private bool LikedIt()
         {
             if(rand.Next(1,5) != 1)
@@ -42,8 +34,8 @@ namespace Dojodachi.Models
                 if(LikedIt())
                 {
                     int added = rand.Next(5,11);
-                    Energy += added;
-                    LastMsg = ($"You fed your Dojodachi! Energy: +{added}");
+                    Fullness += added;
+                    LastMsg = ActionResult(($"You fed your Dojodachi! Fullness: +{added}"));
                 }
                 else
                 {

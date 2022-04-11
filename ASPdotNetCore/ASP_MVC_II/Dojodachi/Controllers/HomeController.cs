@@ -12,49 +12,41 @@ namespace Dojodachi.Controllers
 {
     public class HomeController : Controller
     {
+        public static DojodachiPet pet = new DojodachiPet();
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
-            DojodachiPet pet = new DojodachiPet();
             return View(pet);
         }
         
-        [HttpPost("/sleep")]
-        public IActionResult sleep(string data)
+        [HttpGet("/sleep")]
+        public IActionResult sleep()
         {
-            Console.WriteLine("\n\ninside controller\n\n");
-            dynamic pet = JsonSerializer.Deserialize<DojodachiPet>(data);
-            Console.WriteLine(pet.Energy);
-            // pet.Sleep();
-            // Console.WriteLine(pet.Energy);
-            return View("Index", pet);
+            pet.Sleep();
+            return RedirectToAction("Index");
         }
         [HttpGet("/feed")]
-        public IActionResult feed(int hap, int full, int meals, int ener)
+        public IActionResult feed()
         {
-            DojodachiPet pet = new DojodachiPet(hap,full,ener,meals);
             pet.Feed();
-            return View("Index", pet);
+            return RedirectToAction("Index");
         }
         [HttpGet("/work")]
-        public IActionResult work(int hap, int full, int meals, int ener)
+        public IActionResult work()
         {
-            DojodachiPet pet = new DojodachiPet(hap,full,ener,meals);
             pet.Work();
-            return View("Index", pet);
+            return RedirectToAction("Index");
         }
         [HttpGet("/play")]
-        public IActionResult play(string data)
+        public IActionResult play()
         {
-            DojodachiPet pet = JsonSerializer.Deserialize<DojodachiPet>(data);
             pet.Play();
-            return View("Index", pet);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()
