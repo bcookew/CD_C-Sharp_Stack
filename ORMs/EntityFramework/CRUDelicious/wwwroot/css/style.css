@@ -299,7 +299,7 @@ textarea {
   box-sizing: border-box;
   width: 100%;
   height: 2.4375rem;
-  margin: 0 0 1rem;
+  margin: 0 0 0rem;
   padding: 0.5rem;
   border: 1px solid #cacaca;
   border-radius: 0;
@@ -380,7 +380,7 @@ label > [type=radio] {
 
 label {
   display: block;
-  margin: 0;
+  margin: 1rem 0 0 0;
   font-size: 0.875rem;
   font-weight: normal;
   line-height: 1.8;
@@ -393,10 +393,10 @@ label.middle {
 }
 
 .help-text {
-  margin-top: -0.5rem;
+  position:fixed;
   font-size: 0.8125rem;
   font-style: italic;
-  color: #0a0a0a;
+  color: #cc4b37;
 }
 
 .input-group {

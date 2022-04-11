@@ -61,3 +61,5 @@ C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\CRUDelicious\bin\Deb
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\CRUDelicious\bin\Debug\netcoreapp3.1\package.json
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Header.cshtml.g.cs
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\NewDish.cshtml.g.cs
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\Dish.cshtml.g.cs
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\EditDish.cshtml.g.cs

@@ -1,10 +1,11 @@
 @{
-    ViewData["Title"] = "New Dish";
+    ViewData["Title"] = "Edit Dish";
 }
 @model Dish
 
-<form asp-action="AddNew" asp-controller="Home" method="post">
+<form asp-action="Update" asp-controller="Home" method="post">
     <div class="grid-x align-justify">
+        <input type="hidden" asp-for="DishId">
 
         <div class="cell medium-3">
             <label asp-for="Chef"></label>
