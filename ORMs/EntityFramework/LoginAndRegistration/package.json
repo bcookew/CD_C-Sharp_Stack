@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "foundation-sites": "^6.7.4",
+    "grunt": "^1.5.1",
+    "grunt-contrib-sass": "^2.0.0"
+  }
+}
