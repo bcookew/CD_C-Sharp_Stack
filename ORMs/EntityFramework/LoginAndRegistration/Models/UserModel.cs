@@ -24,7 +24,7 @@ namespace LoginAndRegistration
         [Required]
         [DataType(DataType.Password)]
         // ====================== RegEx from https://www.ocpsoft.org/tutorials/regular-expressions/password-regular-expression/
-        [RegularExpression(@"^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$", ErrorMessage ="Password must be 8-32 chars including Nums, Upper, Lower, and Special Chars")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!#$%^&*<>()|+@\-_\[\]]).\S{8,32}$", ErrorMessage ="Password must be 8-32 chars including Nums, Upper, Lower, and Special Chars")]
         public string Password { get; set; }
         
         public DateTime CreatedAt { get; set; } = DateTime.Now;
@@ -33,6 +33,7 @@ namespace LoginAndRegistration
         // ====================== Not Mapped - Validation purposes only
         [NotMapped]
         [Compare("Password")]
+        [DataType(DataType.Password)]
         public string ConfirmPass {get;set;}
     }
 }
