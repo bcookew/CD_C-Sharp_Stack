@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Login";
+}
+@model LoginView
+
+<div class="grid-x margin-vertical-3 align-center">
+    <div class="cell medium-4">
+        <form asp-action="Login" method="post">
+            <label asp-for="Email"></label>
+            <input asp-for="Email"></input>
+            <span class="help-text" asp-validation-for="Email"></span>
+            <label asp-for="Password"></label>
+            <input asp-for="Password"></input>
+            <span class="help-text" asp-validation-for="Password"></span>
+            <input class="button expanded margin-top-3" type="submit" value="Login">
+        </form>
+    </div>
+</div>
