@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SportsORM.Models;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace SportsORM.Controllers
@@ -97,6 +98,42 @@ namespace SportsORM.Controllers
         [HttpGet("level_2")]
         public IActionResult Level2()
         {
+            ViewBag.AllAtlantic = _context.Teams
+                .Include(t => t.CurrLeague)
+                .Where(t => t.CurrLeague.Name == "Atlantic Soccer Conference")
+                .ToList();
+            ViewBag.CurrPenguins = _context.Players
+                .Include(p => p.CurrentTeam)
+                .Where(p => p.CurrentTeam.TeamName == "Penguins" && p.CurrentTeam.Location == "Boston")
+                .ToList();
+            ViewBag.CurrICBC = _context.Players
+                .Include(p => p.CurrentTeam)
+                .Where(p => p.CurrentTeam.CurrLeague.Name == "International Collegiate Baseball Conference")
+                .ToList();
+            ViewBag.CurrACAFLopez = _context.Players
+                .Include(p => p.CurrentTeam)
+                .ThenInclude(t => t.CurrLeague)
+                .Where(p => p.CurrentTeam.CurrLeague.Name == "American Conference of Amateur Football" && p.LastName == "Lopez")
+                .ToList();
+            ViewBag.FootballPlayers = _context.Players
+                .Include(p => p.CurrentTeam)
+                .Where(p => p.CurrentTeam.CurrLeague.Sport == "Football")
+                .ToList();
+            ViewBag.SophiaTeams = _context.Teams
+                .Include(t => t.CurrentPlayers)
+                .Where(t => t.CurrentPlayers.Any(p => p.FirstName == "Sophia"))
+                .ToList();
+            ViewBag.SophiaLeagues = _context.Leagues
+                .Include(l => l.Teams)
+                .ThenInclude(t => t.CurrentPlayers)
+                .Where(l => l.Teams.Any(t => t.CurrentPlayers.Any(p => p.FirstName == "Sophia")))
+                .ToList();
+            ViewBag.FloresNotRough = _context.Players
+                .Include(p => p.CurrentTeam)
+                .Where(p => p.CurrentTeam.TeamName != "Roughriders" && p.CurrentTeam.Location != "Washington" && p.LastName == "Flores")
+                .OrderBy(p => p.LastName)
+                .ToList();
+            
             return View();
         }
 
