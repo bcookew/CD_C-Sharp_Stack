@@ -4,3 +4,9 @@
 // Write your JavaScript code.
 
 $(document).foundation()
+
+$(function(){
+    $("#register").on("click", function(){
+        $.get("Login")
+    });
+});
