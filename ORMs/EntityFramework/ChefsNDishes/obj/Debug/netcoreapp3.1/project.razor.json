@@ -14407,18 +14407,38 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\ChefsNDishes\\Views\\Dish\\EditDish.cshtml",
+      "TargetPath": "Views\\Dish\\EditDish.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\ChefsNDishes\\Views\\Dish\\Dish.cshtml",
+      "TargetPath": "Views\\Dish\\Dish.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\ChefsNDishes\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\ChefsNDishes\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\ChefsNDishes\\Views\\Shared\\_Header.cshtml",
+      "TargetPath": "Views\\Shared\\_Header.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\ChefsNDishes\\Views\\Chef\\NewChef.cshtml",
+      "TargetPath": "Views\\Chef\\NewChef.cshtml",
       "FileKind": "mvc"
     },
     {
       "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\ChefsNDishes\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\ChefsNDishes\\Views\\Dish\\NewDish.cshtml",
+      "TargetPath": "Views\\Dish\\NewDish.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14429,6 +14449,11 @@
     {
       "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\ChefsNDishes\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\ChefsNDishes\\Views\\Home\\Dishes.cshtml",
+      "TargetPath": "Views\\Home\\Dishes.cshtml",
       "FileKind": "mvc"
     },
     {

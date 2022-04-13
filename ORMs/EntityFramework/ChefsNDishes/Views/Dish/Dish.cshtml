@@ -1,0 +1,25 @@
+@model Dish
+@{
+    ViewData["Title"] = "@Model.Name";
+}
+
+<div class="grid-x margin-vertical-3 align-center">
+    <cell class="shrink text-center">
+        <h1>@Model.Name</h1>
+        <h4 class="subheader">@Model.Creator.FirstName @Model.Creator.LastName</h4>
+        <hr>
+    </cell>
+</div>
+<div class="grid-x margin-vertical-3 align-center">
+    <div class="cell medium-5">
+        <p>@Model.Description</p>
+        <p><strong>Calories:</strong> @Model.Calories</p>
+        <p><strong>Tastiness: </strong> @Model.Tastiness</p>
+    </div>
+</div>
+<div class="grid-x align-center margin-vertical-3">
+    <div class="cell medium-5 flex-container align-justify">
+        <a href="/delete/@Model.DishId" class="button alert">Delete Dish</a>
+        <a href="/edit/@Model.DishId" class="button warning">Edit Dish</a>
+    </div>
+</div>

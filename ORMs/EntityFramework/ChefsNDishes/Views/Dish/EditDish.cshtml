@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Edit Dish";
+}
+@model Dish
+
+<form asp-action="Update" asp-controller="Home" method="post">
+    <div class="grid-x align-justify">
+        <input type="hidden" asp-for="DishId">
+
+        <div class="cell medium-3">
+            <select asp-for="ChefId">
+                <option selected value="@Model.ChefId">@Model.Creator.FirstName @Model.Creator.LastName</option>
+                @foreach (Chef chef in ViewBag.AllChefsExceptCurrent)
+                {
+                    <option value="@chef.ChefId">@chef.FirstName @chef.LastName</option>
+                }
+            </select>
+
+            <label asp-for="Name"></label>
+            <input asp-for="Name">
+            <span class="help-text alert" asp-validation-for="Name"></span>
+
+            <label asp-for="Calories"></label>
+            <input asp-for="Calories">
+            <span class="help-text alert" asp-validation-for="Calories"></span>
+
+        </div>
+
+        <div class="cell medium-3">
+            <label asp-for="Tastiness"></label>
+            <select asp-for="Tastiness">
+                @for (int i = 1; i < 6; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+            </select>
+            <span class="help-text alert" asp-validation-for="Tastiness"></span>
+        </div>
+
+        <div class="cell medium-3">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description"></textarea>
+            <span class="help-text alert" asp-validation-for="Description"></span>
+            <div class="grid-x margin-top-3">
+                <div class="cell text-right">
+                    <input class="button alert" type="submit" value="Add Dish">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

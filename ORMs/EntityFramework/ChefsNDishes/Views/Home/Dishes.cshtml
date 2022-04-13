@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Dishes";
+}
+
+<div class="grid-x align-center">
+    <div class="cell shrink">
+        @if(Model != null)
+        {
+            <h2 class="h4">Check out our Dishes!</h2>
+            <hr>
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Tastiness</th>
+                    <th>Calories</th>
+                    <th>Chef</th>
+                </thead>
+                @foreach (var dish in Model)
+                {
+                    <tr>
+                        <td>@dish.Name</td>
+                        <td>@dish.Description</td>
+                        <td>@dish.Tastiness</td>
+                        <td>@dish.Calories</td>
+                        <td>@dish.Creator.FirstName @dish.Creator.LastName</td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <h2 class="h4">Nothing to see here!</h2>
+        }
+    </div>
+</div>

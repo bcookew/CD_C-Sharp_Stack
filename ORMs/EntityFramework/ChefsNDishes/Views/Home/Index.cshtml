@@ -1,8 +1,32 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@model List<Chef>
+<div class="grid-x align-center">
+    <div class="cell medium-6 large-4 text-center">
+        @if(Model != null)
+        {
+            <h2 class="h4">Check out our Chefs!</h2>
+            <hr>
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Dishes</th>
+                </thead>
+                @foreach (var chef in Model)
+                {
+                    <tr>
+                        <td>@chef.FirstName @chef.LastName</td>
+                        <td>@(DateTime.Now.Subtract(chef.DateOfBirth).Days/365)</td>
+                        <td>@chef.CreatedDishes.Count()</td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <h2 class="h4">Nothing to see here!</h2>
+        }
+    </div>
 </div>
