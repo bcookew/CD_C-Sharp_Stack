@@ -32,7 +32,7 @@ namespace ChefsNDishes.Controllers
             {
                 _context.Add(dish);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Dishes", "Home");
             }
             else
             {
