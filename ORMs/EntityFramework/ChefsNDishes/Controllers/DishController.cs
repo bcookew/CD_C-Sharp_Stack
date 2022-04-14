@@ -28,6 +28,13 @@ namespace ChefsNDishes.Controllers
         [HttpPost("AddDish")]
         public IActionResult AddDish(Dish dish)
         {
+            Console.WriteLine(dish.ChefId);
+            if(dish.ChefId  == 0)
+            {
+                ModelState.AddModelError("ChefId", "Must select a Chef!");
+                ViewBag.AllChefs = _context.Chefs.ToList();
+                return View("NewDish");
+            }
             if(ModelState.IsValid)
             {
                 _context.Add(dish);
