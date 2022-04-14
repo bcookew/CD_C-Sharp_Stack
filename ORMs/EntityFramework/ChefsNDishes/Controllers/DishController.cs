@@ -36,6 +36,7 @@ namespace ChefsNDishes.Controllers
             }
             else
             {
+                ViewBag.AllChefs = _context.Chefs.ToList();
                 return View("NewDish");
             }
         }

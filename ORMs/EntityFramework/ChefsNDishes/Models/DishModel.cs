@@ -25,7 +25,7 @@ namespace ChefsNDishes.Models
 
         [Required]
         [Display(Name = "Chef")]
-        public int ChefId { get; set; }
+        public int? ChefId { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
         public Chef Creator { get; set; }

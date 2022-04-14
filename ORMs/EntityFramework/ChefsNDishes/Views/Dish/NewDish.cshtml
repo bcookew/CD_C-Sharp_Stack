@@ -17,7 +17,7 @@ else
             <div class="cell medium-3">
                 <label asp-for="ChefId"></label>
                 <select asp-for="ChefId">
-                    <option selected disabled>Choose a Chef</option>
+                    <option selected disabled value="">Choose a Chef</option>
                     @foreach (Chef chef in ViewBag.AllChefs)
                     {
                         <option value="@chef.ChefId">@chef.FirstName @chef.LastName</option>

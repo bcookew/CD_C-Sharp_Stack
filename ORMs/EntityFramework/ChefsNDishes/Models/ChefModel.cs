@@ -25,6 +25,7 @@ namespace ChefsNDishes.Models
         [Display(Name ="Date of Birth")]
         [AgeRequirement(ErrorMessage = "Must be 18 Years of age")]
         public DateTime DateOfBirth { get; set; }
+        public int Age { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
         public List<Dish> CreatedDishes {get;set;}
