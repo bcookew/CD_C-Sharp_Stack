@@ -4,12 +4,111 @@
         <p>Using the SportsORM, complete all the following queries and show their results on Level3.cshtml.</p>
         <ol>
             <li>...all teams, past and present, that Samuel Evans has played with</li>
+            <table class="table-sm table-striped">
+                <tr>
+                    <th>Team</th>
+                    <th>Location</th>
+                </tr>
+                @foreach (var t in ViewBag.SamEvans.AllTeams)
+                {
+                    <tr>
+                        <td>@t.TeamOfPlayer.TeamName</td>
+                        <td>@t.TeamOfPlayer.Location</td>
+                    </tr>
+                }
+            </table>
             <li>...all players, past and present, with the Manitoba Tiger-Cats</li>
+            <table class="table-sm table-striped">
+                <tr>
+                    <th>Team</th>
+                    <th>Location</th>
+                </tr>
+                @foreach (var pt in ViewBag.MTTC.AllPlayers)
+                {
+                    <tr>
+                        <td>@pt.PlayerOnTeam.FirstName</td>
+                        <td>@pt.PlayerOnTeam.LastName</td>
+                    </tr>
+                }
+            </table>
             <li>...all players who were formerly (but aren't currently) with the Wichita Vikings</li>
+            <table class="table-sm table-striped">
+                <tr>
+                    <th>Team</th>
+                    <th>Location</th>
+                </tr>
+                @foreach (var player in ViewBag.FormerWichVikings)
+                {
+                    <tr>
+                        <td>@player.FirstName</td>
+                        <td>@player.LastName</td>
+                    </tr>
+                }
+            </table>
             <li>...every team that Jacob Gray played for before he joined the Oregon Colts</li>
+            <table class="table-sm table-striped">
+                <tr>
+                    <th>Team</th>
+                    <th>Location</th>
+                </tr>
+                @foreach (var pt in ViewBag.JG)
+                {
+                    <tr>
+                        <td>@pt.TeamOfPlayer.TeamName</td>
+                        <td>@pt.TeamOfPlayer.Location</td>
+                    </tr>
+                }
+            </table>
             <li>...everyone named "Joshua" who has ever played in the Atlantic Federation of Amateur Baseball Players</li>
+            <table class="table-sm table-striped">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Team</th>
+                    <th>Location</th>
+                </tr>
+                @foreach (var pt in ViewBag.Joshuas)
+                {
+                    <tr>
+                        <td>@pt.PlayerOnTeam.FirstName</td>
+                        <td>@pt.PlayerOnTeam.LastName</td>
+                        <td>@pt.TeamOfPlayer.TeamName</td>
+                        <td>@pt.TeamOfPlayer.Location</td>
+                    </tr>
+                }
+            </table>
             <li>...all teams that have had 12 or more players, past and present.</li>
+            <table class="table-sm table-striped">
+                <tr>
+                    <th>Team Name</th>
+                    <th>Player Count</th>
+                    <th>Player Count Current</th>
+                </tr>
+                @foreach (var team in ViewBag.Twelve)
+                {
+                    <tr>
+                        <td>@team.TeamName</td>
+                        <td>@team.AllPlayers.Count</td>
+                        <td>@team.CurrentPlayers.Count</td>
+                    </tr>
+                }
+            </table>
             <li>...all players, sorted by the number of teams they've played for</li>
+            <table class="table-sm table-striped">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Num Teams</th>
+                </tr>
+                @foreach (var player in ViewBag.AllPlayersByTeamCount)
+                {
+                    <tr>
+                        <td>@player.FirstName</td>
+                        <td>@player.LastName</td>
+                        <td>@player.AllTeams.Count</td>
+                    </tr>
+                }
+            </table>
         </ol>
     </div>
 </div>

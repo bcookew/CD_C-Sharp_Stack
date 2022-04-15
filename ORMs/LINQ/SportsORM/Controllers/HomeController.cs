@@ -140,6 +140,44 @@ namespace SportsORM.Controllers
         [HttpGet("level_3")]
         public IActionResult Level3()
         {
+            ViewBag.SamEvans = _context.Players
+                .Include(p => p.AllTeams)
+                    .ThenInclude(pt => pt.TeamOfPlayer)
+                .FirstOrDefault(p => p.FirstName == "Samuel" && p.LastName == "Evans");
+            ViewBag.MTTC = _context.Teams
+                            .Include(t => t.AllPlayers)
+                                .ThenInclude(pt => pt.PlayerOnTeam)
+                            .FirstOrDefault(t => t.TeamName == "Tiger-Cats" && t.Location == "Manitoba");
+            List<Player> players = _context.Players
+                                            .Include(p => p.CurrentTeam)
+                                            .Include(p => p.AllTeams)
+                                                .ThenInclude(t => t.TeamOfPlayer)
+                                            .ToList();
+            ViewBag.FormerWichVikings = players.Where(p => p.CurrentTeam.TeamName != "Vikings" && p.AllTeams.Any(t => t.TeamOfPlayer.TeamName == "Vikings"));
+            
+            Player JG = _context.Players
+                        .Include(p => p.CurrentTeam)
+                        .Include(p => p.AllTeams)
+                            .ThenInclude(t => t.TeamOfPlayer)
+                        .FirstOrDefault(p => p.FirstName == "Jacob" && p.LastName == "Gray");
+            ViewBag.JG = JG.AllTeams.Where(pt => pt.TeamOfPlayer.TeamName != "Colts" && pt.TeamOfPlayer.Location != "Oregon");
+
+            ViewBag.Joshuas = _context.Players
+                        .Include(p => p.AllTeams)
+                            .ThenInclude(at => at.TeamOfPlayer)
+                                .ThenInclude(top => top.CurrLeague)
+                        .Where(p => p.FirstName == "Joshua" && p.AllTeams.Any(pt => pt.TeamOfPlayer.CurrLeague.Name =="Atlantic Federation of Amateur Baseball Players"))
+                        .ToList();
+
+            ViewBag.Twelve = _context.Teams
+                .Where(t => t.AllPlayers.Count >= 12)
+                .OrderBy(t => t.AllPlayers.Count)
+                .ToList();
+
+            ViewBag.AllPlayersByTeamCount = _context.Players
+                .OrderBy(p => p.AllTeams.Count)
+                .ToList();
+            
             return View();
         }
 
