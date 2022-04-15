@@ -21,6 +21,7 @@ namespace BankAccounts
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    Console.WriteLine("\n\nLaunched BankAccounts\n\n");
                 });
     }
 }

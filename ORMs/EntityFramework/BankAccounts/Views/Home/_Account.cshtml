@@ -1,0 +1,16 @@
+@model Transaction
+
+<form asp-action="AddTransaction">
+    <div class="grid-x align-left">
+        <div class="cell shrink">
+            <div class="input-group">
+                <label class="input-group-label" asp-for="Amount"></label>
+                <input class="input-group-field" asp-for="Amount">
+                <div class="input-group-button">
+                    <input type="submit" class="button alert" value="Submit">
+                </div>
+            </div>
+                <span class="help-text" asp-validation-for="Amount"></span>
+        </div>
+    </div>
+</form>
