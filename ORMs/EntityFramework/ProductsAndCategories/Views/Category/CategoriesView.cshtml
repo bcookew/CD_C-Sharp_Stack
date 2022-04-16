@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Categories";
+}
+@model Category
+<div class="grid-x align-center margin-vertical-3">
+    <div class="cell medium-6 text-center">
+        <h1 class="h4">New Category</h1>
+        <form asp-action="AddCategory" asp-controller="Category">
+            <div class="input-group">
+                <label class="input-group-label" asp-for="Name"></label>
+                <input asp-for="Name" class="input-group-field">
+            </div>
+            <span asp-validation-for="Name"></span>
+            <input type="submit" class="button success" value="Add Category">
+        </form>
+    </div>
+    <div class="cell medium-6 text-center">
+        <h1 class="h4">Existing Categories</h1>
+        @if(ViewBag.Categories.Count > 0)
+        {    
+            @foreach(var cat in ViewBag.Categories)
+            {
+                <a asp-action="ViewCategory" asp-controller="Category" asp-route-id="@cat.CategoryId">@cat.Name</a>
+            }
+        }
+    </div>
+</div>
