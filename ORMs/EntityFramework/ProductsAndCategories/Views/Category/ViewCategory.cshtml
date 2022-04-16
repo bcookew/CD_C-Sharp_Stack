@@ -28,7 +28,7 @@
     @if(Model.Products.Count > 0)
     {
         <form asp-action="AddTag" asp-controller="Category">
-            <input type="hidden" asp-for="Tag.CategoryId" value="@Model.Tag.CategoryId">
+            <input type="hidden" asp-for="Tag.CategoryId" value="@Model.Category.CategoryId">
             <div class="input-group">
                 <label class="input-group-label" asp-for="Tag.ProductId"></label>
                     <select asp-for="Tag.ProductId" class="input-group-field">
@@ -38,7 +38,8 @@
                             <option value="@prod.ProductId">@prod.Name</option>
                         }
                     </select>
-            </div>
+                </div>
+                <p class="help-text"><span asp-validation-for="Tag.ProductId"></span></p>
             <input type="submit" class="button success" value="Add Product">
         </form>
     }

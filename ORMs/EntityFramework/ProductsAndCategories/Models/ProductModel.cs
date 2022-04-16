@@ -19,8 +19,9 @@ namespace ProductsAndCategories
         [MinLength(10, ErrorMessage ="Min Length 10 Chars")]
         public string Description { get; set; }
         
+        [Required]
         [Display(Name = "Price $")]
-        [Range(0.01, 10000.00)]
+        [Range(0.01, 100000.00, ErrorMessage ="Value must be greater than $0.00")]
         [DataType(DataType.Currency)]
         [Column(TypeName = "decimal(8, 2)")]
         public decimal Price { get; set; }

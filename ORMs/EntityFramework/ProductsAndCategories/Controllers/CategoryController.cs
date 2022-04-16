@@ -44,6 +44,9 @@ namespace ProductsAndCategories.Controllers
             }
             else
             {
+                ViewBag.Categories = _context.Categories
+                            .AsNoTracking()
+                            .ToList();
                 return View("CategoriesView");
             }
         }
@@ -64,7 +67,7 @@ namespace ProductsAndCategories.Controllers
             {
                 _context.Add(tag);
                 _context.SaveChanges();
-                return RedirectToAction("ViewProduct", new {id=tag.ProductId});
+                return RedirectToAction("ViewCategory", new {id=tag.CategoryId});
             }
             else
             {

@@ -47,6 +47,9 @@ namespace ProductsAndCategories.Controllers
             }
             else
             {
+                ViewBag.Prods = _context.Products
+                            .AsNoTracking()
+                            .ToList();
                 return View("ProductsView");
             }
         }
