@@ -1,0 +1,50 @@
+﻿@model CategoryPage
+@{
+    ViewData["Title"] = Model.Category.Name;
+}
+<div class="grid-x align-center">
+    <div class="cell shrink">
+        <h1 class="h3">@Model.Category.Name</h1>
+    </div>
+</div>
+<div class="grid-x align-center margin-vertical-3">
+    <div class="cell medium-6 text-center">
+        <h1 class="h4">Existing Products</h1>
+        @if(Model.Category.AllProducts.Count > 0)
+        {
+            <ul class="no-bullet">
+            @foreach(var tag in Model.Category.AllProducts)
+            {
+                <li><a asp-action="ViewProduct" asp-controller="Product" asp-route-id="@tag.ProductId">@tag.Product.Name</a></li>
+            }
+            </ul>
+        }
+        else
+        {
+            <h2 class="h5">@Model.Category.Name not tagged to any Products</h2>
+        }
+    </div>
+    <div class="cell medium-6 text-center">
+    @if(Model.Products.Count > 0)
+    {
+        <form asp-action="AddTag" asp-controller="Category">
+            <input type="hidden" asp-for="Tag.CategoryId" value="@Model.Tag.CategoryId">
+            <div class="input-group">
+                <label class="input-group-label" asp-for="Tag.ProductId"></label>
+                    <select asp-for="Tag.ProductId" class="input-group-field">
+                        <option selected disabled value="0">Select a Product</option>
+                        @foreach(Product prod in Model.Products)
+                        {
+                            <option value="@prod.ProductId">@prod.Name</option>
+                        }
+                    </select>
+            </div>
+            <input type="submit" class="button success" value="Add Product">
+        </form>
+    }
+    else
+    {
+        <h2 class="h4">Better add some Products!</h2>
+    }
+    </div>
+</div>

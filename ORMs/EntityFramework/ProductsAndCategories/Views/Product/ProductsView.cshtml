@@ -27,11 +27,13 @@
     <div class="cell medium-6 text-center">
         <h1 class="h4">Existing Products</h1>
         @if(ViewBag.Prods.Count > 0)
-        {    
+        {
+            <ul class="no-bullet">
             @foreach(var prod in ViewBag.Prods)
             {
-                <a asp-action="ViewProduct" asp-controller="Product" asp-route-id="@prod.ProductId">@prod.Name</a>
+                <li><a asp-action="ViewProduct" asp-controller="Product"  asp-route-id="@prod.ProductId">@prod.Name</a></li>
             }
+            </ul>
         }
     </div>
 </div>

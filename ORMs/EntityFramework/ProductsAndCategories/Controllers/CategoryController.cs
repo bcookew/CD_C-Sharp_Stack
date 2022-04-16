@@ -51,6 +51,29 @@ namespace ProductsAndCategories.Controllers
         [HttpGet("ViewCategory/{id}")]
         public IActionResult ViewCategory(int id)
         {
+            CategoryPage cat = BuildPageModel(id, _context);
+            return View(cat);
+        }
+
+        // ====================
+        // ====================== Add Tag to Category
+        // ====================
+        public IActionResult AddTag(Tag tag)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Add(tag);
+                _context.SaveChanges();
+                return RedirectToAction("ViewProduct", new {id=tag.ProductId});
+            }
+            else
+            {
+                CategoryPage cat = BuildPageModel(tag.CategoryId, _context, tag);
+                return View("ViewCategory", cat);
+            }
+        }
+        public static CategoryPage BuildPageModel(int id, ProductsAndCategoriesContext _context, Tag PassedTag = null)
+        {
             CategoryPage cat = new CategoryPage();
             cat.Category = _context.Categories
                             .Include(cat => cat.AllProducts)
@@ -59,14 +82,17 @@ namespace ProductsAndCategories.Controllers
                             .SingleOrDefault(cat => cat.CategoryId == id);
             cat.Products = _context.Products
                             .Include(p => p.AllCategories)
-                            .Where(p => p.AllCategories.Any(tag => tag.CategoryId != cat.Category.CategoryId))
+                            .Where(p => !p.AllCategories.Any(tag => tag.ProductId == p.ProductId && tag.CategoryId == cat.Category.CategoryId))
                             .AsNoTracking().ToList();
-            return View(cat);
+            if(PassedTag != null)
+            {
+                cat.Tag = PassedTag;
+            }
+            else
+            {
+                cat.Tag = new Tag();
+            }
+            return cat;
         }
-
-        // ====================
-        // ====================== Home Route - Display Homepage
-        // ====================
-        
     }
 }

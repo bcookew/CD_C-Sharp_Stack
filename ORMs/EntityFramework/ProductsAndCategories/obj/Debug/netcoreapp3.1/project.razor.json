@@ -14432,6 +14432,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\ProductsAndCategories\\Views\\Category\\ViewCategory.cshtml",
+      "TargetPath": "Views\\Category\\ViewCategory.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\ProductsAndCategories\\Views\\Product\\ProductsView.cshtml",
       "TargetPath": "Views\\Product\\ProductsView.cshtml",
       "FileKind": "mvc"

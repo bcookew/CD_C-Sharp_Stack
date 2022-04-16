@@ -62,3 +62,4 @@ C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategorie
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\Razor\Views\Product\ViewProduct.cshtml.g.cs
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\Razor\Views\Product\ProductsView.cshtml.g.cs
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\Razor\Views\Category\CategoriesView.cshtml.g.cs
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\Razor\Views\Category\ViewCategory.cshtml.g.cs

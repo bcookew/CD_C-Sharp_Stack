@@ -3,8 +3,10 @@
     ViewData["Title"] = Model.Product.Name;
 }
 <div class="grid-x align-center">
-    <div class="cell shrink">
+    <div class="cell shrink text-center">
         <h1 class="h3">@Model.Product.Name</h1>
+        <p class="h5 subheader">$@Model.Product.Price</p>
+        <p class="lead">@Model.Product.Description</p>
     </div>
 </div>
 <div class="grid-x align-center margin-vertical-3">
@@ -12,10 +14,12 @@
         <h1 class="h4">Existing Categories</h1>
         @if(Model.Product.AllCategories.Count > 0)
         {
-            foreach(var cat in Model.Product.AllCategories)
+            <ul class="no-bullet">
+            @foreach(var cat in Model.Product.AllCategories)
             {
-                <a asp-action="ViewCategory" asp-controller="Category" asp-route-id="@cat.CategoryId">@cat.Category.Name</a>
+                <li><a asp-action="ViewCategory" asp-controller="Category" asp-route-id="@cat.CategoryId">@cat.Category.Name</a></li>
             }
+            </ul>
         }
         else
         {
@@ -25,7 +29,8 @@
     <div class="cell medium-6 text-center">
     @if(Model.Categories.Count > 0)
     {
-        <form asp-action="AddCategory" asp-controller="Product">
+        <form asp-action="AddTag" asp-controller="Product">
+            <input type="hidden" asp-for="Tag.ProductId" value="@Model.Product.ProductId">
             <div class="input-group">
                 <label class="input-group-label" asp-for="Tag.CategoryId"></label>
                     <select asp-for="Tag.CategoryId" class="input-group-field">
@@ -36,6 +41,7 @@
                         }
                     </select>
             </div>
+            <p class="help-text"><span asp-validation-for="Tag.CategoryId"></span></p>
             <input type="submit" class="button success" value="Add Product">
         </form>
     }

@@ -50,40 +50,79 @@ namespace ProductsAndCategories.Controllers
                 return View("ProductsView");
             }
         }
-        [HttpGet("ViewProduct/{id}")]
+        [HttpGet("Product/ViewProduct/{id}")]
         public IActionResult ViewProduct(int id)
+        {
+            ProductPage prod = BuildPageModel(id, _context);
+            return View(prod);
+        }
+        // ====================
+        // ====================== Add tag relationship
+        // ====================
+        public IActionResult AddTag(Tag tag)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Add(tag);
+                _context.SaveChanges();
+                return RedirectToAction("ViewProduct", new {id=tag.ProductId});
+            }
+            else
+            {
+                ProductPage prod = BuildPageModel(tag.ProductId, _context, tag);
+                return View("ViewProduct", prod);
+            }
+        }
+
+        public static ProductPage BuildPageModel(int id, ProductsAndCategoriesContext _context, Tag PassedTag = null)
         {
             ProductPage prod = new ProductPage();
             prod.Product = _context.Products
                             .Include(p => p.AllCategories)
                             .ThenInclude(allcats => allcats.Category)
                             .AsNoTracking().SingleOrDefault(p => p.ProductId == id);
-            var cats = _context.Categories
-                                .Include(cats => cats.AllProducts)
+            prod.Categories = _context.Categories
+                                .Include(cat => cat.AllProducts)
+                                .Where(cat => !cat.AllProducts.Any(tag => tag.CategoryId == cat.CategoryId && tag.ProductId == prod.Product.ProductId))
+                                .AsNoTracking()
                                 .ToList();
-            List<Category> cat = new List<Category>();            
-            foreach(var c in cats)
+            
+            if(PassedTag != null)
             {
-                bool present = false;
-                foreach (var tag in c.AllProducts)
-                {
-                    if (tag.ProductId == prod.Product.ProductId)
-                    {
-                        present = true;
-                        break;
-                    }
-                }
-                if(present)
-                {
-                    continue;
-                }
-                cat.Add(c);
+                prod.Tag = PassedTag;
             }
-            prod.Categories = cat;
-            prod.Tag = new Tag();
-            return View(prod);
-        }
+            else
+            {
+                prod.Tag = new Tag();
+            }
+            return prod;
 
-        // public IActionResult AddCategory()
+            // ====================== Old Filtering ***********************************************
+
+            // var cats = _context.Categories
+            //                     .Include(cats => cats.AllProducts)
+            //                     .AsNoTracking()
+            //                     .ToList();
+            // List<Category> cat = new List<Category>();            
+            // foreach(var c in cats)
+            // {
+            //     bool present = false;
+            //     foreach (var tag in c.AllProducts)
+            //     {
+            //         if (tag.ProductId == prod.Product.ProductId)
+            //         {
+            //             present = true;
+            //             break;
+            //         }
+            //     }
+            //     if(present)
+            //     {
+            //         continue;
+            //     }
+            //     cat.Add(c);
+            // }
+            
+        }
     }
+
 }

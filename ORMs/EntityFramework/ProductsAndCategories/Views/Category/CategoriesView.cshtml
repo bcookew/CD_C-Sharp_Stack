@@ -18,10 +18,12 @@
         <h1 class="h4">Existing Categories</h1>
         @if(ViewBag.Categories.Count > 0)
         {    
+            <ul class="no-bullet">
             @foreach(var cat in ViewBag.Categories)
             {
-                <a asp-action="ViewCategory" asp-controller="Category" asp-route-id="@cat.CategoryId">@cat.Name</a>
+                <li><a asp-action="ViewCategory" asp-controller="Category" asp-route-id="@cat.CategoryId">@cat.Name</a></li>
             }
+            </ul>
         }
     </div>
 </div>
