@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] | Login&Reg | B C Williams Dev</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" src="~/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" src="~/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" src="~/favicon/apple-touch-icon.png">
+</head>
+<body>
+    <header>
+        <partial name="_Header">
+    </header>
+    <div class="grid-container">
+        <main role="main" class="margin-3">
+            @RenderBody()
+        </main>
+    </div>
+
+<div class="reveal" id="modal" data-reveal>
+    <div id="modalBody"></div>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/foundation.min.js"></script>
+    <script src="~/js/site.js"></script>
+</body>
+</html>
