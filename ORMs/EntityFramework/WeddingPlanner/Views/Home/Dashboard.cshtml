@@ -4,7 +4,7 @@
 @model List<Wedding>
 <div class="grid-x align-left">
     <div class="cell shrink">
-        <h1 class="success">Success!</h1>
+        <h1 class="text-success">Welcome, @ViewBag.FirstName!</h1>
     </div>
 </div>
 <div class="grid-x align-center">
@@ -25,7 +25,7 @@
                     {
                         <tr>
                             <td><a asp-action="ViewWedding" asp-route-id="@wedding.WeddingId">@wedding.NearlyWed1 & @wedding.NearlyWed2</a></td>
-                            <td>@wedding.EventDate</td>
+                            <td>@wedding.EventDate.ToLongDateString()</td>
                             <td>@wedding.GuestsAttending.Count</td>
                             <td>
                                 @if(ViewBag.UserId == wedding.UserId)

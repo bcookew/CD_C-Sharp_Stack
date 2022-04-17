@@ -19,7 +19,7 @@ $(function(){
         })
     });
     $("#newWedding").on("click", function(){
-        $.get("NewWeddingForm",function (response) {
+        $.get("/NewWeddingForm",function (response) {
             $("#modalBody").html(response)
             $("#modal").foundation("open")
         })

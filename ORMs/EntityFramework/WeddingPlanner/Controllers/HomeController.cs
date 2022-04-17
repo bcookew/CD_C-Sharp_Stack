@@ -28,6 +28,10 @@ namespace WeddingPlanner.Controllers
         // ====================
         public IActionResult Index()
         {
+            if(HttpContext.Session.GetInt32("UserId") != null)
+            {
+                ViewBag.LoggedIn = true;
+            }
             return View();
         }
 
@@ -146,8 +150,10 @@ namespace WeddingPlanner.Controllers
                                         .Include(w => w.Creator)
                                         .Include(w => w.GuestsAttending)
                                             .ThenInclude(ga => ga.User)
+                                        .OrderBy(w => w.EventDate)
                                         .ToList();
                 ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+                ViewBag.FirstName = HttpContext.Session.GetString("FirstName");
                 ViewBag.LoggedIn = true;
                 return View(Weddings);
             }
@@ -196,6 +202,7 @@ namespace WeddingPlanner.Controllers
                                 .Include(w => w.GuestsAttending)
                                     .ThenInclude(ga => ga.User)
                                 .SingleOrDefault(w => w.WeddingId == id);
+            ViewBag.LoggedIn = true;
             return View(wedding);
         }
 

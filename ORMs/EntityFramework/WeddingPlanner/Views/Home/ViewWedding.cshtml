@@ -3,28 +3,30 @@
 }
 @model Wedding
 
-<div class="grid-x text-center">
-    <h1 class="h4">
-        @Model.NearlyWed1 & @Model.NearlyWed2's Wedding
-    </h1>
-    <span class="h6 subheader">Wedding Planner: @Model.Creator.FirstName @Model.Creator.LastName</span>
+<div class="grid-x">
+    <div class="cell">
+        <h1 class="h4">
+            @Model.NearlyWed1 & @Model.NearlyWed2's Wedding
+        </h1>
+        <p class="h6 subheader">Wedding Planner: @Model.Creator.FirstName @Model.Creator.LastName</p>
+    </div>
 </div>
-<div class="grid-x align-spaced">
+<div class="grid-x grid-margin-x align-Left">
     <div class="cell shrink">
         <h2 class="h5">Details</h2>
-        <p>Wedding Date: @Model.EventDate</p>
-        <p>Ceremony Time: @Model.EventTime</p>
+        <p>Wedding Date: @Model.EventDate.ToLongDateString()</p>
+        <p>Ceremony Time: @Model.EventTime.ToLongTimeString()</p>
         <p>Ceremony Location: @Model.Address</p>
     </div>
     <div class="cell shrink">
         <h2 class="h5">Guest List</h2>
-        @if(Model.GuestsAttending.Count > 0)
+        @if (Model.GuestsAttending.Count > 0)
         {
             <ul class="no-bullet">
-            @foreach(Guest guest in Model.GuestsAttending)
-            {
-                <li>@guest.User.FirstName @guest.User.LastName</li>
-            }
+                @foreach (Guest guest in Model.GuestsAttending)
+                {
+                    <li>@guest.User.FirstName @guest.User.LastName</li>
+                }
             </ul>
         }
         else

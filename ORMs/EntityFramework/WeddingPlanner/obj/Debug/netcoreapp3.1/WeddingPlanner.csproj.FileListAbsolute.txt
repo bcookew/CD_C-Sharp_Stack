@@ -63,3 +63,4 @@ C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\D
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\Razor\Views\Home\Dashboard.cshtml.g.cs
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\Razor\Views\Home\_NewWedding.cshtml.g.cs
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\Razor\Views\Home\ViewWedding.cshtml.g.cs

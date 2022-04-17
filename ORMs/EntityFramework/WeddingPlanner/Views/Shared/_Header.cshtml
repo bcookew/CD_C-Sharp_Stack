@@ -6,10 +6,17 @@
 <div class="top-bar" id="example-menu">
     <div class="top-bar-left">
         <ul class="menu">
-            <li><a href="/" class="menu-text">Login & Reg</a></li>
+            <li><a href="/" class="menu-text">Wedding</a></li>
             <li><a href="/">Home</a></li>
-            <li><a id="register" data-open="modal">Register</a></li>
-            <li><a id="login">Log in</a></li>
+            @if(ViewBag.LoggedIn == true)
+            {
+                <li><a asp-action="Dashboard">Dashboard</a></li>
+            }
+            else
+            {
+                <li><a id="register" data-open="modal">Register</a></li>
+                <li><a id="login">Log in</a></li>
+            }
         </ul>
     </div>
     <div class="top-bar-right">
@@ -18,7 +25,7 @@
             {
                 <li><a id="newWedding">New Wedding</a></li>
             }
-            <li><a href="Logout">Log out</a></li>
+            <li><a asp-action="Logout">Log out</a></li>
         </ul>
     </div>
 </div>
