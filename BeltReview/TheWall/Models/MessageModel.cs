@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -20,5 +21,6 @@ namespace TheWall.Models
 
         // ====================== Nav Properties
         public User Author { get; set; }
+        public List<Comment> CommentsOnMessage { get; set; }
     }
 }
