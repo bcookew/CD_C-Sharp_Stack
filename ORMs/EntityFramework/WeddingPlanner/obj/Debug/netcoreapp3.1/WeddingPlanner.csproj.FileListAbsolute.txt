@@ -2,7 +2,6 @@ C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\bin\D
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\bin\Debug\netcoreapp3.1\package-lock.json
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\bin\Debug\netcoreapp3.1\package.json
-C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\bin\Debug\netcoreapp3.1\WeddingPlanner.exe
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\bin\Debug\netcoreapp3.1\WeddingPlanner.deps.json
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\bin\Debug\netcoreapp3.1\WeddingPlanner.runtimeconfig.json
@@ -34,7 +33,6 @@ C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\bin\D
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.csprojAssemblyReference.cache
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.AssemblyInfoInputs.cache
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.AssemblyInfo.cs
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.csproj.CoreCompileInputs.cache
@@ -46,7 +44,6 @@ C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\D
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.RazorCoreGenerate.cache
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\Razor\Views\Home\Success.cshtml.g.cs
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Login.cshtml.g.cs
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Register.cshtml.g.cs
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -59,7 +56,10 @@ C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\D
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.Views.pdb
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.csproj.CopyComplete
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\staticwebassets\WeddingPlanner.StaticWebAssets.Manifest.cache
-C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\staticwebassets\WeddingPlanner.StaticWebAssets.xml
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.dll
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.pdb
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.genruntimeconfig.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.csproj.AssemblyReference.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\WeddingPlanner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\Razor\Views\Home\Dashboard.cshtml.g.cs
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\WeddingPlanner\obj\Debug\netcoreapp3.1\Razor\Views\Home\_NewWedding.cshtml.g.cs
