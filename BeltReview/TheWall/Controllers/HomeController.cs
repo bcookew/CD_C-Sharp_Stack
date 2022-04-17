@@ -122,7 +122,7 @@ namespace TheWall.Controllers
         {
             if(HttpContext.Session.GetString("UserId") != null)
             {
-                return View();
+                return RedirectToAction("Dashboard", "Message");
             }
             else
             {
