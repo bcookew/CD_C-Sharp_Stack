@@ -147,6 +147,7 @@ namespace WeddingPlanner.Controllers
                                         .Include(w => w.GuestsAttending)
                                             .ThenInclude(ga => ga.User)
                                         .ToList();
+                ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
                 return View(Weddings);
             }
             else
