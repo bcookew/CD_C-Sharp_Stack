@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"]="Dashboard";
+}
+@model Dashboard
+
+<div class="row">
+    <partial name="_NewPost" model="Model.Message">
+</div>
+
+<div class="row">
+    <partial name="_Messages" model="Model.Messages">
+</div>
