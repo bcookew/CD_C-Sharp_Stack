@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.Design;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WeddingPlanner.Models
@@ -22,8 +23,10 @@ namespace WeddingPlanner.Models
         public string NearlyWed2 { get; set; }
 
         [Required]
+        [FutureDate]
         [Display(Name ="Wedding Date")]
         [DataType(DataType.Date)]
+
         public DateTime EventDate { get; set; }
         
         [Required]
@@ -48,5 +51,25 @@ namespace WeddingPlanner.Models
         public List<Guest> GuestsAttending { get; set; }
 
         
+    }
+    public class FutureDateAttribute : ValidationAttribute
+    {
+        private DateTime _Now;
+        private string _Message;
+        public FutureDateAttribute() : base()
+        {
+            _Now = DateTime.Now;
+            _Message = "Dates must be in the future!";
+        }
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            DateTime EventDate = (DateTime)value;
+            if (DateTime.Compare(_Now, EventDate) >= 0)
+            {
+                return new ValidationResult("Choose a Future Date!");
+            }
+
+            return ValidationResult.Success;
+        }
     }
 }

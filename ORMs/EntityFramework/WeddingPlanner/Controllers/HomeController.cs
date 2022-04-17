@@ -187,6 +187,7 @@ namespace WeddingPlanner.Controllers
             }
             else
             {
+                ViewBag.LoggedIn = true;
                 return View("_NewWedding");
             }
         }
