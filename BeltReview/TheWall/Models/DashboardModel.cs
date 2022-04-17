@@ -7,5 +7,6 @@ namespace TheWall.Models
     {
         public Message Message { get; set; }
         public List<Message> Messages { get; set; }
+        public User User { get; set; }
     }
 }
