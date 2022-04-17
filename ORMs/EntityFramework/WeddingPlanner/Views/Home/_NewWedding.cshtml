@@ -6,31 +6,31 @@
 <form asp-action="AddWedding" method="post">
     <h1>Register</h1>
     <div class="grid-x margin-top-3 grid-margin-x align-center">
-        <div class="cell shrink">
+        <div class="cell medium-6">
             <label asp-for="NearlyWed1"></label>
             <input asp-for="NearlyWed1"></input>
             <span class="help-text text-alert" asp-validation-for="NearlyWed1"></span>
         </div>
-        <div class="cell shrink">
+        <div class="cell medium-6">
             <label asp-for="NearlyWed2"></label>
             <input asp-for="NearlyWed2"></input>
             <span class="help-text text-alert" asp-validation-for="NearlyWed2"></span>
         </div>
     </div>
-    <div class="grid-x align-center">
-        <div class="cell shrink">
+    <div class="grid-x align-center grid-margin-x">
+        <div class="cell medium-6">
             <label asp-for="EventDate"></label>
             <input asp-for="EventDate"></input>
             <span class="help-text text-alert" asp-validation-for="EventDate"></span>
         </div>
-    </div>
-    <div class="grid-x grid-margin-x align-center">
-        <div class="cell shrink">
+        <div class="cell medium-6">
             <label asp-for="EventTime"></label>
             <input asp-for="EventTime"></input>
             <span class="help-text text-alert" asp-validation-for="EventTime"></span>
         </div>
-        <div class="cell shrink">
+    </div>
+    <div class="grid-x grid-margin-x align-center">
+        <div class="cell">
             <label asp-for="Address"></label>
             <input asp-for="Address"></input>
             <span class="help-text text-alert" asp-validation-for="Address"></span>
