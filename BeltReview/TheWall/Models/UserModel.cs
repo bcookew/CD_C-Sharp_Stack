@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -35,5 +36,8 @@ namespace TheWall.Models
         [Compare("Password")]
         [DataType(DataType.Password)]
         public string ConfirmPass {get;set;}
+
+        // ====================== Nav Props
+        public List<Comment> AuthoredComments { get; set; }
     }
 }
