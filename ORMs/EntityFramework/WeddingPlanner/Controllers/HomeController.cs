@@ -130,7 +130,7 @@ namespace WeddingPlanner.Controllers
         }
 
         // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        // xxxxxxxxxxxxxxxx  Planner Routes  xxxxxxxxxxxxxxxxxxx
+        // xxxxxxxxxxxxxxxx  Wedding Routes  xxxxxxxxxxxxxxxxxxx
         // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
         // ====================
@@ -218,6 +218,49 @@ namespace WeddingPlanner.Controllers
             else
             {
                 return RedirectToAction("Index");
+            }
+        }
+
+        
+        // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        // xxxxxxxxxxxxxxxxxx  Guest Routes  xxxxxxxxxxxxxxxxxxx
+        // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+        // ====================
+        // ====================== Add Guest to Wedding
+        // ====================
+        public IActionResult AddGuest(int id)
+        {
+            if(HttpContext.Session.GetInt32("UserId") != null)
+            {
+                Guest guest = new Guest();
+                guest.UserId = (int)HttpContext.Session.GetInt32("UserId");
+                _context.Add(guest);
+                _context.SaveChanges();
+                return RedirectToAction("Dashboard");
+            }
+            else
+            {
+                return RedirectToAction("Dashboard");
+            }
+        }
+        
+        // ====================
+        // ====================== Remove Guest from Wedding
+        // ====================
+        public IActionResult RemoveGuest(int id)
+        {
+            if(HttpContext.Session.GetInt32("UserId") != null)
+            {
+                Guest guest = _context.Guests
+                                .SingleOrDefault(g => g.WeddingId == id && g.UserId == HttpContext.Session.GetInt32("UserId"));
+                _context.Remove(guest);
+                _context.SaveChanges();
+                return RedirectToAction("Dashboard");
+            }
+            else
+            {
+                return RedirectToAction("Dashboard");
             }
         }
 
