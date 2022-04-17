@@ -1,6 +1,56 @@
 @{
     ViewData["Title"] = "Dashboard";
 }
-<div class="grid-x text-center">
-    <h1 class="success">Success!</h1>
+@model List<Wedding>
+<div class="grid-x align-left">
+    <div class="cell shrink">
+        <h1 class="success">Success!</h1>
+    </div>
+</div>
+<div class="grid-x align-center">
+    <table>
+        <thead>
+            <tr>
+                <th>Wedding</th>
+                <th>Date</th>
+                <th>Guest Count</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if(Model.Count > 0)
+                {
+                    foreach(Wedding wedding in Model)
+                    {
+                        <tr>
+                            <td><a asp-action="ViewWedding" asp-route-id="@wedding.WeddingId">@wedding.NearlyWed1 & @wedding.NearlyWed2</a></td>
+                            <td>@wedding.EventDate</td>
+                            <td>@wedding.GuestsAttending.Count</td>
+                            <td>
+                                @if(ViewBag.UserId == wedding.UserId)
+                                {
+                                    <a asp-action="RemoveWedding" asp-route-id="@wedding.WeddingId">Cancel Event</a>
+                                }
+                                else if (wedding.GuestsAttending.Any(g => g.UserId == ViewBag.UserId))
+                                {
+                                    <a asp-action="RemoveGuest" asp-route-id="@wedding.WeddingId">Update to Not Going</a>
+                                }
+                                else
+                                {
+                                    <a asp-action="AddGuest" asp-route-id="@wedding.WeddingId">Update to Going</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4" class="text-center">No Weddings in the Planner</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
 </div>
