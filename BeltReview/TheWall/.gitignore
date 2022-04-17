@@ -1,6 +1,6 @@
 appsettings.json
 appsettings.Development.json
-
+migrations
 
 # Created by https://www.toptal.com/developers/gitignore/api/dotnetcore,aspnetcore,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=dotnetcore,aspnetcore,visualstudiocode
