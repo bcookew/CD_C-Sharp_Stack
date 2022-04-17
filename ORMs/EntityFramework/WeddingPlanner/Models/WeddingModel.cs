@@ -12,18 +12,22 @@ namespace WeddingPlanner.Models
         public int WeddingId{ get; set; }
 
         [Required]
+        [Display(Name ="Nearlywed 1")]
         [MinLength(3, ErrorMessage ="Minimum 3 Chars")]
         public string NearlyWed1 { get; set; }
         
         [Required]
+        [Display(Name ="Nearlywed 2")]
         [MinLength(3, ErrorMessage ="Minimum 3 Chars")]
         public string NearlyWed2 { get; set; }
 
         [Required]
+        [Display(Name ="Wedding Date")]
         [DataType(DataType.Date)]
         public DateTime EventDate { get; set; }
         
         [Required]
+        [Display(Name ="Cermony Time")]
         [DataType(DataType.Time)]
         public DateTime EventTime { get; set; }
 

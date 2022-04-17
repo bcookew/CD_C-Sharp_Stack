@@ -174,6 +174,7 @@ namespace WeddingPlanner.Controllers
         {
             if(ModelState.IsValid)
             {
+                wedding.UserId = (int)HttpContext.Session.GetInt32("UserId");
                 _context.Add(wedding);
                 _context.SaveChanges();
                 return RedirectToAction("Dashboard");
@@ -236,6 +237,7 @@ namespace WeddingPlanner.Controllers
             {
                 Guest guest = new Guest();
                 guest.UserId = (int)HttpContext.Session.GetInt32("UserId");
+                guest.WeddingId = id;
                 _context.Add(guest);
                 _context.SaveChanges();
                 return RedirectToAction("Dashboard");

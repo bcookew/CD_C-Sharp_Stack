@@ -14452,6 +14452,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\WeddingPlanner\\Views\\Home\\ViewWedding.cshtml",
+      "TargetPath": "Views\\Home\\ViewWedding.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\WeddingPlanner\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
