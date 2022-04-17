@@ -7,5 +7,7 @@ namespace TheWall.Models
 
         // ================================== User Table
         public DbSet<User> Users { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }
