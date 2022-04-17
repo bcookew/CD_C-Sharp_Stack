@@ -6,6 +6,7 @@ namespace WeddingPlanner.Models
 {
     public class Guest
     {
+        // ====================== Weddings_Has_Users Joining Table
         [Key]
         public int GuestId { get; set; }
 
@@ -14,6 +15,8 @@ namespace WeddingPlanner.Models
         [Range(1,int.MaxValue)]
         public int WeddingId { get; set; }
 
+
+        // ====================== Nav Props for User and Wedding
         public User User { get; set; }
         public Wedding Wedding { get; set; }
     }

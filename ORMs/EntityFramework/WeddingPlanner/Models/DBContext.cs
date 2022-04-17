@@ -5,7 +5,7 @@ namespace WeddingPlanner.Models
     { 
         public WeddingPlannerContext(DbContextOptions options) : base(options) { }
 
-        // ================================== User Table
+        // ================================== Tables to be created / accessed
         public DbSet<User> Users { get; set; }
         public DbSet<Guest> Guests { get; set; }
         public DbSet<Wedding> Weddings { get; set; }

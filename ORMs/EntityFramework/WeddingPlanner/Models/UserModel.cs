@@ -7,6 +7,7 @@ namespace WeddingPlanner.Models
 {
     public class User
     {
+        // ====================== User Table Model
         [Key]
         public int UserId { get; set; }
         
@@ -30,6 +31,7 @@ namespace WeddingPlanner.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
+        // ====================== Nav Prop for Guest list 
         public List<Wedding> Weddings { get; set; }
 
         // ====================== Not Mapped - Validation purposes only
