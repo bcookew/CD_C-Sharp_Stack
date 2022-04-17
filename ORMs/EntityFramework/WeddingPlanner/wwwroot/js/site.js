@@ -18,6 +18,12 @@ $(function(){
             $("#modal").foundation("open")
         })
     });
+    $("#newWedding").on("click", function(){
+        $.get("RegistrationForm",function (response) {
+            $("#modalBody").html(response)
+            $("#modal").foundation("open")
+        })
+    });
 });
 
 

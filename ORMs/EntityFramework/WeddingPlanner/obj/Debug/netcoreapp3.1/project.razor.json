@@ -14422,8 +14422,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\WeddingPlanner\\Views\\Home\\Success.cshtml",
-      "TargetPath": "Views\\Home\\Success.cshtml",
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\WeddingPlanner\\Views\\Home\\Dashboard.cshtml",
+      "TargetPath": "Views\\Home\\Dashboard.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Usmig\\OneDrive\\Coding_Dojo\\C#\\ORMs\\EntityFramework\\WeddingPlanner\\Views\\Home\\_NewWedding.cshtml",
+      "TargetPath": "Views\\Home\\_NewWedding.cshtml",
       "FileKind": "mvc"
     },
     {

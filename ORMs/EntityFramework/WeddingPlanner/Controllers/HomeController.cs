@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using WeddingPlanner.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace WeddingPlanner.Controllers
 {
@@ -29,6 +30,10 @@ namespace WeddingPlanner.Controllers
         {
             return View();
         }
+
+        // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        // xxxxxxxxxxxxxxxxxxx  User Routes  xxxxxxxxxxxxxxxxxxx
+        // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
         // ====================
         // ====================== Registration form loader
@@ -60,7 +65,7 @@ namespace WeddingPlanner.Controllers
                     User u = _context.Users.FirstOrDefault(us => us.Email == user.Email); 
                     HttpContext.Session.SetInt32("UserId", u.UserId);
                     HttpContext.Session.SetString("FirstName", u.FirstName);
-                    return RedirectToAction("Success");
+                    return RedirectToAction("Dashboard");
                 }
             }
             else
@@ -104,29 +109,13 @@ namespace WeddingPlanner.Controllers
                 {
                     HttpContext.Session.SetInt32("UserId", dbUser.UserId);
                     HttpContext.Session.SetString("FirstName", dbUser.FirstName);
-                    return RedirectToAction("Success");
+                    return RedirectToAction("Dashboard");
                 }
 
             }
             else
             {
                 return View("_Login");
-            }
-        }
-
-        // ====================
-        // ====================== Login/Reg Success
-        // ====================
-        [HttpGet("Success")]
-        public IActionResult Success()
-        {
-            if(HttpContext.Session.GetString("UserId") != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Index");
             }
         }
 
@@ -138,6 +127,97 @@ namespace WeddingPlanner.Controllers
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Index");
+        }
+
+        // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        // xxxxxxxxxxxxxxxx  Planner Routes  xxxxxxxxxxxxxxxxxxx
+        // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+        // ====================
+        // ====================== Planner Dashboard
+        // ====================
+
+        [HttpGet("Dashboard")]
+        public IActionResult Dashboard()
+        {
+            if(HttpContext.Session.GetString("UserId") != null)
+            {
+                List<Wedding> Weddings = _context.Weddings
+                                        .Include(w => w.Creator)
+                                        .Include(w => w.GuestsAttending)
+                                            .ThenInclude(ga => ga.User)
+                                        .ToList();
+                return View(Weddings);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
+
+        // ====================
+        // ====================== New Wedding Form loader
+        // ====================
+        [HttpGet("NewWeddingForm")]
+        public IActionResult NewWedding()
+        {
+            return PartialView("_NewWedding");
+        }
+
+        // ====================
+        // ====================== Add Wedding to DB
+        // ====================
+        [HttpPost("AddWedding")]
+        public IActionResult AddWedding(Wedding wedding)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Add(wedding);
+                _context.SaveChanges();
+                return RedirectToAction("Dashboard");
+            }
+            else
+            {
+                return View("_NewWedding");
+            }
+        }
+
+        // ====================
+        // ====================== View Wedding
+        // ====================
+        [HttpGet("ViewWedding/{id}")]
+        public IActionResult ViewWedding(int id)
+        {
+            Wedding wedding =  _context.Weddings
+                                .Include(w => w.Creator)
+                                .Include(w => w.GuestsAttending)
+                                    .ThenInclude(ga => ga.User)
+                                .SingleOrDefault(w => w.WeddingId == id);
+            return View(wedding);
+        }
+
+        // ====================
+        // ====================== Delete Wedding
+        // ====================
+        public IActionResult RemoveWedding(int id)
+        {
+            if(HttpContext.Session.GetInt32("UserId") != null) // Ensures User in Session
+            {
+                Wedding wedding = _context.Weddings
+                                        .SingleOrDefault(w => w.WeddingId == id);
+                int? UserId = HttpContext.Session.GetInt32("UserId");
+                if(wedding.UserId == UserId) // Ensures User in Session is event Owner
+                {
+                    _context.Remove(wedding);
+                    _context.SaveChanges();
+                    return RedirectToAction("Dashboard");
+                }
+                return RedirectToAction("Dashboard");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
 
         // ====================

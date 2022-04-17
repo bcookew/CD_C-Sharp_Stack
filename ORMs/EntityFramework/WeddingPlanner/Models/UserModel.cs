@@ -32,7 +32,7 @@ namespace WeddingPlanner.Models
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
         // ====================== Nav Prop for Guest list 
-        public List<Wedding> Weddings { get; set; }
+        public List<Guest> WeddingsAttending { get; set; }
 
         // ====================== Not Mapped - Validation purposes only
         [NotMapped]

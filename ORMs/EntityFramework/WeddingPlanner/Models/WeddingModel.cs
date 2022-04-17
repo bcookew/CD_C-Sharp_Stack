@@ -41,7 +41,7 @@ namespace WeddingPlanner.Models
         public User Creator { get; set; }
 
         // ====================== Nav Prop for Guest List
-        public List<User> Guests { get; set; }
+        public List<Guest> GuestsAttending { get; set; }
 
         
     }
