@@ -6,5 +6,6 @@ namespace DashboardApp.Models
         public User User { get; set; }
         public Message Message { get; set; }
         public Comment Comment { get; set; }
+        public int LoggedInUserId { get; set; }
     }
 }
