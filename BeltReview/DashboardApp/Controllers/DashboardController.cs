@@ -55,6 +55,7 @@ namespace DashboardApp.Controllers
                                 .ThenInclude(mr => mr.Author)
                             .Include(u => u.MessagesRecieved)
                                 .ThenInclude(mr => mr.CommentsOnMessage)
+                                    .ThenInclude(com => com.CommentAuthor)
                             .SingleOrDefault(u => u.UserId == id);
             profile.Message = new Message();
             profile.Comment = new Comment();

@@ -13,29 +13,28 @@ using DashboardApp.Models;
 
 namespace DashboardApp.Controllers
 {
-    public class MessageController : Controller
+    public class CommentController : Controller
     {
-        private readonly ILogger<MessageController> _logger;
+        private readonly ILogger<CommentController> _logger;
         private DashboardAppContext _context;
 
-        public MessageController(ILogger<MessageController> logger, DashboardAppContext context)
+        public CommentController(ILogger<CommentController> logger, DashboardAppContext context)
         {
             _logger = logger;
             _context = context;
         }
-
+        
         // ====================
         // ====================== Add new Message to DB
         // ====================
-        [HttpPost("/NewMessage")]
-        public IActionResult NewMessage(Profile prof)
-        {
-            Message msg = prof.Message;
+        [HttpPost("/AddComment")]
+        public IActionResult AddComment(Profile prof) {
+            Comment cmt = prof.Comment;
             if(ModelState.IsValid)
             {
-                _context.Add(msg);
+                _context.Add(cmt);
                 _context.SaveChanges();
-                return RedirectToAction("Profile", "Dashboard", new {id = msg.RecipientId});
+                return RedirectToAction("Profile", "Dashboard", new {id = cmt.MessageRecipientId});
             }
             else
             {
@@ -48,8 +47,8 @@ namespace DashboardApp.Controllers
                                     .ThenInclude(mr => mr.CommentsOnMessage)
                                         .ThenInclude(com => com.CommentAuthor)
                                 .SingleOrDefault(u => u.UserId == profile.LoggedInUserId);
-                profile.Message = msg;
-                profile.Comment = new Comment();
+                profile.Message = new Message();
+                profile.Comment = cmt;
                 return View("Profile", profile);
             }
         }
