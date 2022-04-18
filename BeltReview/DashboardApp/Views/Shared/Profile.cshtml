@@ -1,0 +1,111 @@
+@{
+    ViewData["Title"] = "User Dashboard";
+}
+@model Profile
+
+<header>
+    <partial name="_UserHeader">
+</header>
+
+<main class="container">
+    <div class="row">
+        <div class="col-auto">
+            <span class="display-6">@Model.User.FirstName @Model.User.LastName</span>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-auto">
+            <table class="table-sm">
+                <tbody>
+                    <tr>
+                        <td class="text-end">Registered:</td>
+                        <th>@Model.User.CreatedAt.ToShortDateString()</th>
+                    </tr>
+                    <tr>
+                        <td class="text-end">User Id:</td>
+                        <th>#@Model.User.UserId</th>
+                    </tr>
+                    <tr>
+                        <td class="text-end">eMail:</td>
+                        <th>@Model.User.Email</th>
+                    </tr>
+                    <tr class="align-top">
+                        <td class="text-end">About me:</td>
+                        <th>@Model.User.Description</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <div class="row my-4 text-start">
+        <span class="fs-6">Leave @Model.User.FirstName a message!</span>
+        <form asp-action="NewMessage" asp-controller="Message" method="post">
+            <input type="hidden" asp-for="Message.RecipientId" value="@Model.User.UserId">
+            <input type="hidden" asp-for="Message.AuthorId" value="@Model.LoggedInUserId">
+            <div>
+                <textarea class="form-control" asp-for="Message.MessageText"></textarea>
+                <span class="form-text text-danger" asp-validation-for="Message.MessageText"></span>
+            </div>
+            <div class="text-end">
+                <input type="submit" class="btn btn-success btn-lg mt-4" value="Post">
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        @if(@Model.User.MessagesRecieved.Count > 0){
+            foreach(Message msg in Model.User.MessagesRecieved)
+            {
+                <div class="row">
+                    <div class="col-auto">
+                        <span class="fs-5">@msg.Author.FirstName @msg.Author.LastName wrote:</span>
+                    </div>
+                    <div class="col-auto">
+                        <em class="muted">
+                            @msg.CreatedAt.ToShortTimeString() on @msg.CreatedAt.ToShortDateString()
+                        </em>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="fs-6">@msg.MessageText</p>
+                </div>
+                if(msg.CommentsOnMessage.Count > 0)
+                {
+                    foreach(Comment cmt in msg.CommentsOnMessage)
+                    {
+                        <div class="ms-5">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <span class="fs-5">@cmt.CommentAuthor.FirstName @cmt.CommentAuthor.LastName wrote:</span>
+                                </div>
+                                <div class="col-auto">
+                                    <em class="muted">
+                                        @cmt.CreatedAt.ToShortTimeString() on @cmt.CreatedAt.ToShortDateString()
+                                    </em>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="fs-6">@cmt.CommentText</p>
+                            </div>
+                        </div>
+                    }
+                }
+                <div class="row ms-4 my-4 text-start">
+                    <span class="fs-6">Comment on @msg.Author.FirstName's message!</span>
+                    <form asp-action="AddComment" asp-controller="Comment" method="post">
+                        <input type="hidden" asp-for="Comment.MessageId" value="@msg.MessageId">
+                        <input type="hidden" asp-for="Comment.UserId" value="@Model.LoggedInUserId">
+                        <div>
+                            <textarea class="form-control" asp-for="Comment.CommentText"></textarea>
+                            <span class="form-text text-danger" asp-validation-for="Comment.CommentText"></span>
+                        </div>
+                        <div class="text-end">
+                            <input type="submit" class="btn btn-success btn-lg mt-4" value="Post">
+                        </div>
+                    </form>
+                </div>
+            }
+        }
+    </div>
+</main>
