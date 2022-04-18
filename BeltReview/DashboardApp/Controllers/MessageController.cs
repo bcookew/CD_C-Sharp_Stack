@@ -54,29 +54,27 @@ namespace DashboardApp.Controllers
         // ====================== Add new Message to DB
         // ====================
         [HttpPost("/NewMessage")]
-        public IActionResult NewMessage(Dashboard mod)
-        {
-            Message msg = mod.NewMessage;
+        public IActionResult NewMessage(Profile prof)      {
+            Message msg = prof.Message;
             if(ModelState.IsValid)
             {
                 _context.Add(msg);
                 _context.SaveChanges();
-                return RedirectToAction("Dashboard");
+                return RedirectToAction("Profile", "Dashboard", HttpContext.Session.GetInt32("UserId"));
             }
             else
             {
-                Dashboard dash = new Dashboard();
-                dash.NewMessage = msg;
-                dash.Messages = _context.Messages
-                                .Include(msg => msg.Author)
-                                .Include(msg => msg.CommentsOnMessage)
-                                    .ThenInclude(cmt => cmt.CommentAuthor)
-                                .OrderByDescending(msg => msg.CreatedAt)
-                                .ToList();
-                dash.NewComment = new Comment();
-                dash.User = _context.Users
-                                .SingleOrDefault(user => user.UserId == HttpContext.Session.GetInt32("UserId"));
-                return View("Dashboard", dash);
+                Profile profile = new Profile();
+                profile.LoggedInUserId = (int)HttpContext.Session.GetInt32("UserId");
+                profile.User = _context.Users
+                                .Include(u => u.MessagesRecieved)
+                                    .ThenInclude(mr => mr.Author)
+                                .Include(u => u.MessagesRecieved)
+                                    .ThenInclude(mr => mr.CommentsOnMessage)
+                                .SingleOrDefault(u => u.UserId == profile.LoggedInUserId);
+                profile.Message = msg;
+                profile.Comment = new Comment();
+                return View("Profile", profile);
             }
         }
         
