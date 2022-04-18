@@ -27,12 +27,24 @@ namespace DashboardApp.Controllers
         [HttpGet("/Dashboard")]
         public IActionResult Dashboard()
         {
+            if(!LoggedIn())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+            ViewBag.FirstName = HttpContext.Session.GetString("FirstName");
             List<User> users = _context.Users.OrderBy(u => u.UserId).ToList();
             return View("UserDashboard", users);
         }
         
 
         // ====================== User Management and Validation Methods
+        private void SetUserInSession(User user)
+        {
+            HttpContext.Session.SetInt32("UserId", user.UserId);
+            HttpContext.Session.SetString("FirstName", user.FirstName);
+        }
+        
         private bool LoggedIn()
         { 
             if (HttpContext.Session.GetInt32("UserId") != null)
@@ -43,12 +55,6 @@ namespace DashboardApp.Controllers
             {
                 return false;
             }
-        }
-
-        private void SetUserInSession(User user)
-        {
-            HttpContext.Session.SetInt32("UserId", user.UserId);
-            HttpContext.Session.SetString("FirstName", user.FirstName);
         }
 
         private bool UserIsAdmin()

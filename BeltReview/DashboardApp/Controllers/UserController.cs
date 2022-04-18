@@ -99,6 +99,12 @@ namespace DashboardApp.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpGet("/Users/Show/{id}")]
+        public IActionResult Profile(int id)
+        {
+            return View();
+        }
+
         // =================================================
         // ================== Admin Routes =================
         // =================================================
