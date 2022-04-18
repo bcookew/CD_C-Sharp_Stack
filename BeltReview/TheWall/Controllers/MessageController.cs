@@ -37,7 +37,9 @@ namespace TheWall.Controllers
                                 .Include(msg => msg.Author)
                                 .Include(msg => msg.CommentsOnMessage)
                                     .ThenInclude(cmt => cmt.CommentAuthor)
+                                .OrderByDescending(msg => msg.CreatedAt)
                                 .ToList();
+                dash.NewComment = new Comment();
                 dash.User = _context.Users
                                 .SingleOrDefault(user => user.UserId == HttpContext.Session.GetInt32("UserId"));
                 return View(dash);
@@ -69,7 +71,39 @@ namespace TheWall.Controllers
                                 .Include(msg => msg.Author)
                                 .Include(msg => msg.CommentsOnMessage)
                                     .ThenInclude(cmt => cmt.CommentAuthor)
+                                .OrderByDescending(msg => msg.CreatedAt)
                                 .ToList();
+                dash.NewComment = new Comment();
+                dash.User = _context.Users
+                                .SingleOrDefault(user => user.UserId == HttpContext.Session.GetInt32("UserId"));
+                return View("Dashboard", dash);
+            }
+        }
+        
+        // ====================
+        // ====================== Add new Comment to DB
+        // ====================
+        [HttpPost("/NewComment")]
+        public IActionResult NewComment(Dashboard mod)
+        {
+            Comment cmt = mod.NewComment;
+            if(ModelState.IsValid)
+            {
+                _context.Add(cmt);
+                _context.SaveChanges();
+                return RedirectToAction("Dashboard");
+            }
+            else
+            {
+                Dashboard dash = new Dashboard();
+                dash.NewMessage = new Message();
+                dash.Messages = _context.Messages
+                                .Include(msg => msg.Author)
+                                .Include(msg => msg.CommentsOnMessage)
+                                    .ThenInclude(cmt => cmt.CommentAuthor)
+                                .OrderByDescending(msg => msg.CreatedAt)
+                                .ToList();
+                dash.NewComment = cmt;
                 dash.User = _context.Users
                                 .SingleOrDefault(user => user.UserId == HttpContext.Session.GetInt32("UserId"));
                 return View("Dashboard", dash);
