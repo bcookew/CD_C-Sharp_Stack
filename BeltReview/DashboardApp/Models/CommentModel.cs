@@ -23,5 +23,9 @@ namespace DashboardApp.Models
         // ====================== Nav Properties
         public User CommentAuthor { get; set; }
         public Message CommentedMessage { get; set; }
+
+        // ====================== Not Mapped
+        [NotMapped]
+        public int MessageRecipientId { get; set; }
     }
 }
