@@ -3,38 +3,46 @@
 }
 @model Dashboard
 
-<div class="row">
+<div class="row my-5">
+    <h1 class="display-5">Welcome, @Model.User.FirstName!</h1>
+</div>
+<div class="row my-5">
     <div class="col justify-content-end">
         <form asp-action="NewMessage" asp-controller="Message" method="post">
-            <input type="hidden" asp-for="Message.UserId" value="@Model.User.UserId">
+            <input type="hidden" asp-for="NewMessage.UserId" value="@Model.User.UserId">
             <div class="mb-3">
-                <label asp-for="Message.Text" class="form-label">Email address</label>
-                <textarea asp-for="Message.Text" class="form-control" id="MessageInput"
+                <label asp-for="NewMessage.MessageText" class="form-label"></label>
+                <textarea asp-for="NewMessage.MessageText" class="form-control" id="MessageInput"
                     aria-describedby="MessageErrorText"></textarea>
-                <span asp-validation-for="Message.Text" id="MessageErrorText" class="form-text"></span>
+                <span asp-validation-for="NewMessage.MessageText" id="MessageErrorText" class="form-text"></span>
             </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <input type="submit" class="btn btn-success" value="Submit">
         </form>
     </div>
 </div>
-<div class="row">
+<div class="row my-5">
     @{
-        if (Model.Count > 0)
+        if (Model.Messages.Count > 0)
         {
+            <h2 class="h3 mb-3">Message List</h2>
+            <hr>
             <div class="col">
-                @foreach (Message message in Model)
+                @foreach (Message message in Model.Messages)
                 {
-                    <h3>@message.Author.FirstName @message.Author.LastName - @message.CreatedAt.ToLongDateString()</h3>
-                    <p class="pl-3">@message.Text</p>
+                    <div class="my-3">
+                        <h3 class="fs-5">@message.Author.FirstName @message.Author.LastName - @message.CreatedAt.ToLongDateString()</h3>
+                        <p class="ms-3 lead">@message.MessageText</p>
+                        
+                    </div>
                 }
             </div>
         }
         else
         {
             <div class="col text-center">
-                <h2>No Messaqges to Show</h2>
+                <h2>No Messages to Show</h2>
             </div>
         }
     }
 </div>
+
