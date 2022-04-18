@@ -11,7 +11,10 @@
                     <a class="nav-link"  asp-action="Dashboard" asp-controller="User">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  asp-action="Profile" asp-controller="User">Profile</a>
+                    <a class="nav-link"  asp-action="Profile" asp-controller="User" asp-route-id="@ViewBag.UserId">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  asp-action="EditProfile" asp-controller="User">Settings</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
