@@ -59,8 +59,8 @@ namespace DashboardApp.Controllers
                     _context.Add(user);
                     _context.SaveChanges();
                     User u = _context.Users.FirstOrDefault(us => us.Email == user.Email); 
-                    HttpContext.Session.SetInt32("UserId", u.UserId);
-                    HttpContext.Session.SetString("FirstName", u.FirstName);
+                    
+                    SetUserInSession(u);
                     return RedirectToAction("Success");
                 }
             }
@@ -102,8 +102,7 @@ namespace DashboardApp.Controllers
                 }
                 else
                 {
-                    HttpContext.Session.SetInt32("UserId", dbUser.UserId);
-                    HttpContext.Session.SetString("FirstName", dbUser.FirstName);
+                    SetUserInSession(dbUser);
                     return RedirectToAction("Success");
                 }
 
@@ -120,7 +119,7 @@ namespace DashboardApp.Controllers
         [HttpGet("Success")]
         public IActionResult Success()
         {
-            if(HttpContext.Session.GetString("UserId") != null)
+            if(LoggedIn())
             {
                 return RedirectToAction("Dashboard", "Message");
             }
@@ -148,6 +147,23 @@ namespace DashboardApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        private bool LoggedIn()
+        { 
+            if (HttpContext.Session.GetInt32("UserId") != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void SetUserInSession(User user)
+        {
+            HttpContext.Session.SetInt32("UserId", user.UserId);
+            HttpContext.Session.SetString("FirstName", user.FirstName);
         }
     }
 }
