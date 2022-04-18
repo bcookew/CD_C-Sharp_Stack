@@ -57,6 +57,7 @@
         @if(@Model.User.MessagesRecieved.Count > 0){
             foreach(Message msg in Model.User.MessagesRecieved)
             {
+                <hr>
                 <div class="row">
                     <div class="col-auto">
                         <span class="fs-5">@msg.Author.FirstName @msg.Author.LastName wrote:</span>
@@ -75,6 +76,7 @@
                     foreach(Comment cmt in msg.CommentsOnMessage)
                     {
                         <div class="ms-5">
+                            <hr>
                             <div class="row">
                                 <div class="col-auto">
                                     <span class="fs-5">@cmt.CommentAuthor.FirstName @cmt.CommentAuthor.LastName wrote:</span>
