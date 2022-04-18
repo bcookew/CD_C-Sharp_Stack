@@ -58,7 +58,8 @@ namespace DashboardApp.Controllers
                             .SingleOrDefault(u => u.UserId == id);
             profile.Message = new Message();
             profile.Comment = new Comment();
-            return View();
+            profile.LoggedInUserId = (int)HttpContext.Session.GetInt32("UserId");
+            return View(profile);
         }
         
 
