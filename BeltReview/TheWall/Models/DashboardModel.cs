@@ -6,6 +6,8 @@ namespace TheWall.Models
     public class Dashboard
     {
         public Message NewMessage { get; set; }
+
+        public Comment NewComment { get; set; }
         public List<Message> Messages { get; set; }
         public User User { get; set; }
     }
