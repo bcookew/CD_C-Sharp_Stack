@@ -11,13 +11,13 @@ namespace DashboardApp.Models
         public int UserId { get; set; }
         
         [Required]
-        [MinLength(3, ErrorMessage = "Names must be at least 3 chars")]
+        [MinLength(3, ErrorMessage = "Names must be at least 3 chars!")]
         [Display(Name ="First Name")]
         public string FirstName { get; set; }
         
         [Required]
         [Display(Name ="Last Name")]
-        [MinLength(3, ErrorMessage = "Names must be at least 3 chars")]
+        [MinLength(3, ErrorMessage = "Names must be at least 3 chars!")]
         public string LastName { get; set; }
         
         [Required]
@@ -41,8 +41,9 @@ namespace DashboardApp.Models
 
         // ====================== Not Mapped - Validation purposes only
         [NotMapped]
-        [Compare("Password")]
+        [Compare("Password", ErrorMessage ="Passwords did not match!")]
         [DataType(DataType.Password)]
+        [Display(Name ="Confirm Password")]
         public string ConfirmPass {get;set;}
 
         // ====================== Nav Props
