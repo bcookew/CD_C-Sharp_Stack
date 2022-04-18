@@ -3,36 +3,46 @@
 }
 @model List<User>
 
-<div class="row">
-    <div class="col-auto">
-        <h1 class="display-5">All Users</h1>
-    </div>
-</div>
-<div class="row">
-    <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <th>ID</th>
-                <th>Name</th>
-                <th>eMail</th>
-                <th>Join Date</th>
-                <th>Access Level</th>
-            </thead>
-            <tbody class="table-striped">
-                @if (Model.Count > 0)
-                {
-                    foreach (User user in Model)
-                    {
-                        <tr>
-                            <th>@user.UserId</th>
-                            <td><a asp-route="/Users/Show/@user.UserId">@user.FirstName @user.LastName</a></td>
-                            <td>@user.Email</td>
-                            <td>@user.CreatedAt.ToShortDateString()</td>
-                            <td>@{string ul = user.UserLevel == 9 ? "Admin" : "Normal";}@ul</td>
-                        </tr>
-                    }
-                }
-            </tbody>
-        </table>
-    </div>
+<header>
+    <partial name="_UserHeader">
+</header>
+<div class="container">
+    <main>
+        <div class="row">
+            <div class="col-auto">
+                <h1 class="display-5">All Users</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>eMail</th>
+                        <th>Join Date</th>
+                        <th>Access Level</th>
+                    </thead>
+                    <tbody class="table-striped">
+                        @if (Model.Count > 0)
+                        {
+                            foreach (User user in Model)
+                            {
+                                <tr>
+                                    <th>@user.UserId</th>
+                                    <td><a asp-route="/Users/Show/@user.UserId">@user.FirstName @user.LastName</a></td>
+                                    <td>@user.Email</td>
+                                    <td>@user.CreatedAt.ToShortDateString()</td>
+                                    <td>
+                                        @{string ul = user.UserLevel == 9 ? "Admin" : "Normal";}
+                                        @ul
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
 </div>
