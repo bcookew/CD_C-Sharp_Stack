@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using DashboardApp.Models;
 
@@ -99,11 +100,6 @@ namespace DashboardApp.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpGet("/Users/Show/{id}")]
-        public IActionResult Profile(int id)
-        {
-            return View();
-        }
 
         // =================================================
         // ================== Admin Routes =================

@@ -5,6 +5,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using DashboardApp.Models;
 
@@ -35,6 +36,29 @@ namespace DashboardApp.Controllers
             ViewBag.FirstName = HttpContext.Session.GetString("FirstName");
             List<User> users = _context.Users.OrderBy(u => u.UserId).ToList();
             return View("UserDashboard", users);
+        }
+
+        // ====================
+        // ====================== User Profiles
+        // ====================
+
+        [HttpGet("/Users/Show/{id}")]
+        public IActionResult Profile(int id)
+        {
+            if(!LoggedIn())
+            {
+                RedirectToAction("Index","Home");
+            }
+            Profile profile = new Profile();
+            profile.User = _context.Users
+                            .Include(u => u.MessagesRecieved)
+                                .ThenInclude(mr => mr.Author)
+                            .Include(u => u.MessagesRecieved)
+                                .ThenInclude(mr => mr.CommentsOnMessage)
+                            .SingleOrDefault(u => u.UserId == id);
+            profile.Message = new Message();
+            profile.Comment = new Comment();
+            return View();
         }
         
 
