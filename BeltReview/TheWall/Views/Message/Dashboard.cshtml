@@ -51,8 +51,8 @@
                                 <input type="hidden" asp-for="NewComment.MessageId" value="@message.MessageId">
                                 <div class="mb-3">
                                     <label asp-for="NewComment.CommentText" class="form-label"></label>
-                                    <textarea asp-for="NewComment.CommentText" class="form-control" id="MessageInput" aria-describedby="MessageErrorText"></textarea>
-                                    <span asp-validation-for="NewComment.CommentText" id="MessageErrorText" class="form-text"></span>
+                                    <textarea asp-for="NewComment.CommentText" class="form-control" aria-describedby="CommentOnMessage_@message.MessageId"></textarea>
+                                    <span asp-validation-for="NewComment.CommentText" id="CommentOnMessage_@message.MessageId" class="form-text"></span>
                                 </div>
                                 <input type="submit" class="btn btn-success" value="Submit">
                             </form>
