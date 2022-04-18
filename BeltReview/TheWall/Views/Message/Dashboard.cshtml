@@ -29,7 +29,7 @@
             <div class="col">
                 @foreach (Message message in Model.Messages)
                 {
-                    <div class="my-3">
+                    <div class="my-4">
                         <h3 class="fs-5">@message.Author.FirstName @message.Author.LastName - @message.CreatedAt.ToLongDateString()
                         </h3>
                         <p class="ms-3 lead">@message.MessageText</p>
@@ -37,14 +37,15 @@
                         {
                             foreach (Comment comment in message.CommentsOnMessage)
                             {
-                                <div class="ms-3">
+                                <div class="ms-4">
                                     <h4 class="fs-6">@comment.CommentAuthor.FirstName @comment.CommentAuthor.LastName -
                                         @comment.CreatedAt.ToLongDateString()</h4>
-                                    <p class="ms-3 lead">@comment.CommentText</p>
+                                    <p class="ms-3">@comment.CommentText</p>
                                 </div>
                             }
                         }
-                        <div class="ms-3">
+                        <hr class="ms-4">
+                        <div class="ms-4">
                             <form asp-action="NewComment" asp-controller="Message" method="post">
                                 <input type="hidden" asp-for="NewComment.UserId" value="@Model.User.UserId">
                                 <input type="hidden" asp-for="NewComment.MessageId" value="@message.MessageId">
