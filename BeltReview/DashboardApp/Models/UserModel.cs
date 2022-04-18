@@ -53,5 +53,6 @@ namespace DashboardApp.Models
         [InverseProperty("Recipient")]
         public List<Message> MessagesRecieved { get; set; }
         public List<Comment> AuthoredComments { get; set; }
+
     }
 }
