@@ -30,6 +30,7 @@ namespace DashboardApp.Controllers
         [HttpGet("/")]
         public IActionResult Index()
         {
+            ViewBag.LoggedIn = HttpContext.Session.GetInt32("UserId") != null;
             return View();
         }
 
