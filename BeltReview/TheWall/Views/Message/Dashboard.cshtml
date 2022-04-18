@@ -30,9 +30,33 @@
                 @foreach (Message message in Model.Messages)
                 {
                     <div class="my-3">
-                        <h3 class="fs-5">@message.Author.FirstName @message.Author.LastName - @message.CreatedAt.ToLongDateString()</h3>
+                        <h3 class="fs-5">@message.Author.FirstName @message.Author.LastName - @message.CreatedAt.ToLongDateString()
+                        </h3>
                         <p class="ms-3 lead">@message.MessageText</p>
-                        
+                        @if (message.CommentsOnMessage.Count > 0)
+                        {
+                            foreach (Comment comment in message.CommentsOnMessage)
+                            {
+                                <div class="ms-3">
+                                    <h4 class="fs-6">@comment.CommentAuthor.FirstName @comment.CommentAuthor.LastName -
+                                        @comment.CreatedAt.ToLongDateString()</h4>
+                                    <p class="ms-3 lead">@comment.CommentText</p>
+                                </div>
+                            }
+                        }
+                        <div class="ms-3">
+                            <form asp-action="NewComment" asp-controller="Message" method="post">
+                                <input type="hidden" asp-for="NewComment.UserId" value="@Model.User.UserId">
+                                <input type="hidden" asp-for="NewComment.MessageId" value="@message.MessageId">
+                                <div class="mb-3">
+                                    <label asp-for="NewComment.CommentText" class="form-label"></label>
+                                    <textarea asp-for="NewComment.CommentText" class="form-control" id="MessageInput" aria-describedby="MessageErrorText"></textarea>
+                                    <span asp-validation-for="NewComment.CommentText" id="MessageErrorText" class="form-text"></span>
+                                </div>
+                                <input type="submit" class="btn btn-success" value="Submit">
+                            </form>
+                        </div>
+
                     </div>
                 }
             </div>
@@ -45,4 +69,3 @@
         }
     }
 </div>
-
