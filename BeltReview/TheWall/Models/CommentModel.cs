@@ -15,6 +15,7 @@ namespace TheWall.Models
         public int MessageId { get; set; }
         [Required]
         [MinLength(3, ErrorMessage ="Min 3 Chars")]
+        [Display(Name ="Post a Comment")]
         public string CommentText { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
