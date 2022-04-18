@@ -101,6 +101,21 @@ namespace DashboardApp.Controllers
         }
 
 
+        // ====================
+        // ====================== User Edit Profile
+        // ====================
+        [HttpGet("/users/edit")]
+        public IActionResult UserEditProfile()
+        {
+            if(!LoggedIn())
+            {
+                RedirectToAction("Index", "Home");
+            }
+            UserUpdate UP = BuildUserUpdatePage();
+            return View("EditProfile", UP);
+        }
+        
+
         // =================================================
         // ================== Admin Routes =================
         // =================================================
@@ -139,6 +154,66 @@ namespace DashboardApp.Controllers
             }
         }
         
+        // =================================================
+        // ============== User Update Routes ===============
+        // =================================================
+
+
+        // ====================
+        // ====================== User Update Routes
+        // ====================
+        public IActionResult UpdateUserProfile(UserUpdate userUpdate)
+        {
+            UpdateProfile updatedUser = userUpdate.Profile;
+            if(ModelState.IsValid)
+            {
+                User user = _context.Users.SingleOrDefault(u => u.UserId == updatedUser.UserId);
+                user.Email = updatedUser.Email;
+                user.FirstName = updatedUser.FirstName;
+                user.LastName = updatedUser.LastName;
+                user.UserLevel = updatedUser.UserLevel;
+                _context.SaveChanges();
+                return RedirectToAction("UserEditProfile");
+            }
+            UserUpdate UP = BuildUserUpdatePage();
+            return View("EditProfile", UP);
+        }
+
+        // ====================
+        // ====================== Update user Password
+        // ====================
+        public IActionResult UpdateUserPassword(UserUpdate userUpdate)
+        {
+            UpdatePassword updatedUser = userUpdate.Password;
+            if(ModelState.IsValid)
+            {
+                User user = _context.Users.SingleOrDefault(u => u.UserId == updatedUser.UserId);
+                PasswordHasher<UpdatePassword> Hasher = new PasswordHasher<UpdatePassword>();
+                user.Password = Hasher.HashPassword(updatedUser, updatedUser.Password);
+                _context.SaveChanges();
+                return RedirectToAction("UserEditProfile");
+            }
+            UserUpdate UP = BuildUserUpdatePage();
+            return View("EditProfile", UP);
+        }
+
+        // ====================
+        // ====================== Update user Description
+        // ====================
+        public IActionResult UpdateUserDescription(UserUpdate userUpdate)
+        {
+            UpdateDescription updatedUser = userUpdate.Description;
+            if(ModelState.IsValid)
+            {
+                User user = _context.Users.SingleOrDefault(u => u.UserId == updatedUser.UserId);
+                user.Description = updatedUser.Description;
+                _context.SaveChanges();
+                return RedirectToAction("UserEditProfile");
+            }
+            UserUpdate UP = BuildUserUpdatePage();
+            return View("EditProfile", UP);
+        }
+
 
         // ====================== User Management and Validation Methods
         private bool LoggedIn()
@@ -178,6 +253,20 @@ namespace DashboardApp.Controllers
                     return false;
                 }
             }
+        }
+        private UserUpdate BuildUserUpdatePage()
+        {
+            User user = _context.Users.SingleOrDefault(u => u.UserId == HttpContext.Session.GetInt32("UserId"));
+            UserUpdate UP = new UserUpdate();
+            Console.WriteLine(user);
+            UP.Profile.UserId = user.UserId;
+            UP.Profile.FirstName = user.FirstName;
+            UP.Profile.LastName = user.LastName;
+            UP.Profile.Email = user.Email;
+            UP.Description.UserId = user.UserId;
+            UP.Description.Description = user.Description;
+            UP.Password.UserId = user.UserId;
+            return UP;
         }
     }
 }

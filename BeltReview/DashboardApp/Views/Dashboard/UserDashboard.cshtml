@@ -35,7 +35,7 @@
                             {
                                 <tr>
                                     <th>@user.UserId</th>
-                                    <td><a asp-route="/Users/Show/@user.UserId">@user.FirstName @user.LastName</a></td>
+                                    <td><a asp-action="Profile" asp-controller="Dashboard" asp-route-id="@user.UserId">@user.FirstName @user.LastName</a></td>
                                     <td>@user.Email</td>
                                     <td>@user.CreatedAt.ToShortDateString()</td>
                                     <td>

@@ -74,11 +74,11 @@ namespace DashboardApp.Controllers
         // ====================
         // ====================== Unauthorized Request to Route
         // ====================
-        [Route("/{**BadRoute}")]
-        public IActionResult BadRoute()
-        {
-            return View();
-        }
+        // [Route("/{**BadRoute}")]
+        // public IActionResult BadRoute()
+        // {
+        //     return View();
+        // }
         
     }
 }

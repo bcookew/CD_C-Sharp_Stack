@@ -49,35 +49,37 @@
                 <span class="form-text text-danger" asp-validation-for="Message.MessageText"></span>
             </div>
             <div class="text-end">
-                <input type="submit" class="btn btn-success btn-lg mt-4" value="Post">
+                <input type="submit" class="btn btn-success mt-4" value="Post">
             </div>
         </form>
     </div>
     <div class="row">
         @if(@Model.User.MessagesRecieved.Count > 0){
-            foreach(Message msg in Model.User.MessagesRecieved)
+            foreach(Message msg in Model.User.MessagesRecieved.OrderByDescending(m =>m.CreatedAt))
             {
-                <hr>
-                <div class="row">
-                    <div class="col-auto">
-                        <span class="fs-5">@msg.Author.FirstName @msg.Author.LastName wrote:</span>
+                <div>
+                    <hr>
+                    <div class="row align-bottom justify-content-between">
+                        <div class="col-auto">
+                            <span class="fs-5">@msg.Author.FirstName @msg.Author.LastName wrote:</span>
+                        </div>
+                        <div class="col-auto">
+                            <em class="muted">
+                                @msg.CreatedAt.ToShortTimeString() on @msg.CreatedAt.ToShortDateString()
+                            </em>
+                        </div>
                     </div>
-                    <div class="col-auto">
-                        <em class="muted">
-                            @msg.CreatedAt.ToShortTimeString() on @msg.CreatedAt.ToShortDateString()
-                        </em>
+                    <div class="row">
+                        <p class="fs-6">@msg.MessageText</p>
                     </div>
-                </div>
-                <div class="row">
-                    <p class="fs-6">@msg.MessageText</p>
                 </div>
                 if(msg.CommentsOnMessage.Count > 0)
                 {
-                    foreach(Comment cmt in msg.CommentsOnMessage)
+                    foreach(Comment cmt in msg.CommentsOnMessage.OrderByDescending(m =>m.CreatedAt))
                     {
-                        <div class="ms-5">
+                        <div class="ps-5">
                             <hr>
-                            <div class="row">
+                            <div class="row align-bottom justify-content-between">
                                 <div class="col-auto">
                                     <span class="fs-5">@cmt.CommentAuthor.FirstName @cmt.CommentAuthor.LastName wrote:</span>
                                 </div>
@@ -93,19 +95,22 @@
                         </div>
                     }
                 }
-                <div class="row ms-4 my-4 text-start">
-                    <span class="fs-6">Comment on @msg.Author.FirstName's message!</span>
-                    <form asp-action="AddComment" asp-controller="Comment" method="post">
-                        <input type="hidden" asp-for="Comment.MessageId" value="@msg.MessageId">
-                        <input type="hidden" asp-for="Comment.UserId" value="@Model.LoggedInUserId">
-                        <div>
-                            <textarea class="form-control" asp-for="Comment.CommentText"></textarea>
-                            <span class="form-text text-danger" asp-validation-for="Comment.CommentText"></span>
-                        </div>
-                        <div class="text-end">
-                            <input type="submit" class="btn btn-success btn-lg mt-4" value="Post">
-                        </div>
-                    </form>
+                <div class="row my-4">
+                    <div class="ps-5">
+                        <span class="fs-6">Comment on @msg.Author.FirstName's message!</span>
+                        <form asp-action="AddComment" asp-controller="Comment" method="post">
+                            <input type="hidden" asp-for="Comment.MessageRecipientId" value="@Model.User.UserId">
+                            <input type="hidden" asp-for="Comment.MessageId" value="@msg.MessageId">
+                            <input type="hidden" asp-for="Comment.UserId" value="@Model.LoggedInUserId">
+                            <div>
+                                <textarea class="form-control" asp-for="Comment.CommentText"></textarea>
+                                <span class="form-text text-danger" asp-validation-for="Comment.CommentText"></span>
+                            </div>
+                            <div class="text-end">
+                                <input type="submit" class="btn btn-success btn mt-4" value="Post">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             }
         }
