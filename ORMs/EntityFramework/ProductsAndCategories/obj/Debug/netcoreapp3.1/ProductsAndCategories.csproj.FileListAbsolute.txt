@@ -1,4 +1,3 @@
-C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\ProductsAndCategories.csprojAssemblyReference.cache
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\ProductsAndCategories.AssemblyInfoInputs.cache
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\ProductsAndCategories.AssemblyInfo.cs
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\ProductsAndCategories.csproj.CoreCompileInputs.cache
@@ -9,7 +8,6 @@ C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategorie
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\bin\Debug\netcoreapp3.1\package-lock.json
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\bin\Debug\netcoreapp3.1\package.json
-C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\bin\Debug\netcoreapp3.1\ProductsAndCategories.exe
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\bin\Debug\netcoreapp3.1\ProductsAndCategories.deps.json
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\bin\Debug\netcoreapp3.1\ProductsAndCategories.runtimeconfig.json
@@ -55,7 +53,6 @@ C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategorie
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\ProductsAndCategories.Views.pdb
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\ProductsAndCategories.csproj.CopyComplete
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\staticwebassets\ProductsAndCategories.StaticWebAssets.Manifest.cache
-C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\staticwebassets\ProductsAndCategories.StaticWebAssets.xml
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\ProductsAndCategories.dll
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\ProductsAndCategories.pdb
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\ProductsAndCategories.genruntimeconfig.cache
@@ -63,3 +60,6 @@ C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategorie
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\Razor\Views\Product\ProductsView.cshtml.g.cs
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\Razor\Views\Category\CategoriesView.cshtml.g.cs
 C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\Razor\Views\Category\ViewCategory.cshtml.g.cs
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\bin\Debug\netcoreapp3.1\ProductsAndCategories.StaticWebAssets.xml
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\ProductsAndCategories.csproj.AssemblyReference.cache
+C:\Users\Usmig\OneDrive\Coding_Dojo\C#\ORMs\EntityFramework\ProductsAndCategories\obj\Debug\netcoreapp3.1\ProductsAndCategories.GeneratedMSBuildEditorConfig.editorconfig

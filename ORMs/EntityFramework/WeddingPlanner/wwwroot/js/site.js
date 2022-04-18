@@ -19,9 +19,9 @@ $(function(){
         })
     });
     $("#newWedding").on("click", function(){
+        $("#modal").foundation("open")
         $.get("/NewWeddingForm",function (response) {
             $("#modalBody").html(response)
-            $("#modal").foundation("open")
         })
     });
 });
