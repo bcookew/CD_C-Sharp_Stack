@@ -89,7 +89,7 @@ class DLL {
     InsertAfter(val, valB) {
         var runner = this.head
         while (runner) {
-            if (runner.value == val2) {
+            if (runner.value == valB) {
                 if (runner==this.tail) {
                     this.insertAtBack(val)
                 } else {
@@ -110,12 +110,12 @@ class DLL {
         // your code here
         var runner = this.head;
         while (runner) {
-            if (runner.value == val2) {
+            if (runner.value == valB) {
                 //if runner is also the head
                 if (runner==this.head) {
                     this.insertAtFront(val)
                 } else {
-                    //make a new node if we find val2
+                    //make a new node if we find valB
                     var newNode = new Node(val);
                     //change all the pointers around
                     runner.previous.next = newNode;
