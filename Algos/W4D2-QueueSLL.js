@@ -43,7 +43,7 @@ class QueueLL {
     size() {
         return this.length;
     }
-    peek () {
+    peek() {
         if(this.isEmpty()){return null}
         else{
             return this.head.data;
@@ -80,6 +80,7 @@ class QueueLL {
         } else {
             var temp = this.head;
             this.head = this.head.next;
+            this.length--;
             return temp.data;
         }
     }
