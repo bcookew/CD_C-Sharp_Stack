@@ -1,0 +1,5 @@
+.vscode
+bin
+migrations
+obj
+wwwroot/lib
