@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Mvc;
 using FirstIdent.Models;
 using FirstIdent.Data;
@@ -20,7 +21,7 @@ namespace FirstIdent.Controllers
             _userManager = UM;
             _signInManager = SIM;
         }
-        public async Task<IActionResult> AddUser(User model)
+        public async Task<IActionResult> AddUser(Reg model)
         {
             if(ModelState.IsValid)
             {
